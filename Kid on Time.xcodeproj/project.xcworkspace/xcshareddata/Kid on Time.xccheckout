@@ -10,6 +10,8 @@
 	<string>Kid on Time</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>DBCB488D4FB0F414E02A8725EDF2B729E05E2F5F</key>
+		<string>bitbucket.org:patrickrts/bedtime-balloons.git</string>
 		<key>a5691636-453a-4fa1-8f72-782fb14b96cc++505</key>
 		<string>https://roundtripsw.svn.beanstalkapp.com/kidontime/trunk</string>
 	</dict>
@@ -17,8 +19,10 @@
 	<string>Kid on Time.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>a5691636-453a-4fa1-8f72-782fb14b96cc++505</key>
+		<key>DBCB488D4FB0F414E02A8725EDF2B729E05E2F5F</key>
 		<string>../..</string>
+		<key>a5691636-453a-4fa1-8f72-782fb14b96cc++505</key>
+		<string>../../../kidontimem</string>
 	</dict>
 	<key>IDESourceControlProjectRepositoryRootDictionary</key>
 	<dict>
@@ -26,13 +30,21 @@
 		<string>https://roundtripsw.svn.beanstalkapp.com/kidontime</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://roundtripsw.svn.beanstalkapp.com/kidontime/trunk/Kid%20on%20Time.xcodeproj</string>
+	<string>bitbucket.org:patrickrts/bedtime-balloons.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>a5691636-453a-4fa1-8f72-782fb14b96cc++505</string>
+	<string>DBCB488D4FB0F414E02A8725EDF2B729E05E2F5F</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DBCB488D4FB0F414E02A8725EDF2B729E05E2F5F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>bedtime-balloons</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.subversion</string>
