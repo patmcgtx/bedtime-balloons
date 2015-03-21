@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="864" systemVersion="11D50" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Kid">
+        <attribute name="name" attributeType="String" defaultValueString="New Kid" spotlightIndexingEnabled="YES"/>
+    </entity>
+    <entity name="Routine" representedClassName="KTRoutine">
+        <attribute name="name" attributeType="String" defaultValueString="New Kid"/>
+        <attribute name="order" attributeType="Integer 16"/>
+    </entity>
+    <elements>
+        <element name="Kid" positionX="160" positionY="192" width="128" height="60"/>
+        <element name="Routine" positionX="117" positionY="-0" width="128" height="75"/>
+    </elements>
+</model>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="864" systemVersion="11D50" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Routine" representedClassName="KTRoutine">
+        <attribute name="name" attributeType="String" defaultValueString="New Kid"/>
+        <attribute name="order" attributeType="Integer 16"/>
+        <relationship name="steps" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Step" inverseName="routine" inverseEntity="Step"/>
+    </entity>
+    <entity name="Step" representedClassName="KTStep">
+        <attribute name="canBeDeferred" attributeType="Boolean" defaultValueString="NO"/>
+        <attribute name="canBePaused" attributeType="Boolean" defaultValueString="NO"/>
+        <attribute name="canBeSkipped" attributeType="Boolean" defaultValueString="NO"/>
+        <attribute name="name" attributeType="String" minValueString="1" defaultValueString="New Step" spotlightIndexingEnabled="YES"/>
+        <attribute name="order" attributeType="Integer 16" minValueString="0"/>
+        <attribute name="timeInSeconds" attributeType="Integer 16" minValueString="1"/>
+        <relationship name="routine" optional="YES" maxCount="1" deletionRule="Nullify" ordered="YES" destinationEntity="Routine" inverseName="steps" inverseEntity="Routine"/>
+    </entity>
+    <entity name="StepPrototype">
+        <attribute name="canBeDeferred" attributeType="Boolean" defaultValueString="NO"/>
+        <attribute name="canBePaused" attributeType="Boolean" defaultValueString="NO"/>
+        <attribute name="canBeSkipped" attributeType="Boolean" defaultValueString="NO"/>
+        <attribute name="timeInSeconds" attributeType="Integer 16" minValueString="1"/>
+        <relationship name="names" toMany="YES" minCount="1" deletionRule="Cascade" destinationEntity="StepPrototypeName" inverseName="stepPrototype" inverseEntity="StepPrototypeName"/>
+    </entity>
+    <entity name="StepPrototypeName">
+        <attribute name="locale" attributeType="String" minValueString="2"/>
+        <attribute name="name" attributeType="String" minValueString="1"/>
+        <relationship name="stepPrototype" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="StepPrototype" inverseName="names" inverseEntity="StepPrototype"/>
+    </entity>
+    <elements>
+        <element name="Routine" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="Step" positionX="-11" positionY="-9" width="128" height="150"/>
+        <element name="StepPrototype" positionX="180" positionY="-144" width="128" height="120"/>
+        <element name="StepPrototypeName" positionX="196" positionY="18" width="128" height="90"/>
+    </elements>
+</model>

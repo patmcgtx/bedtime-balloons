@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="864" systemVersion="11D50" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Routine" representedClassName="KTRoutine">
+        <attribute name="name" attributeType="String" defaultValueString="New Kid"/>
+        <attribute name="order" attributeType="Integer 16"/>
+        <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Task" inverseName="routine" inverseEntity="Task"/>
+    </entity>
+    <entity name="Task" representedClassName="KTTask">
+        <attribute name="canBeDeferred" attributeType="Boolean" defaultValueString="NO"/>
+        <attribute name="canBePaused" attributeType="Boolean" defaultValueString="NO"/>
+        <attribute name="canBeSkipped" attributeType="Boolean" defaultValueString="NO"/>
+        <attribute name="name" attributeType="String" defaultValueString="New Step" spotlightIndexingEnabled="YES"/>
+        <attribute name="order" attributeType="Integer 16"/>
+        <attribute name="timeInSeconds" attributeType="Integer 16"/>
+        <relationship name="routine" optional="YES" maxCount="1" deletionRule="Nullify" ordered="YES" destinationEntity="Routine" inverseName="tasks" inverseEntity="Routine"/>
+    </entity>
+    <entity name="TaskPrototype" representedClassName="KTTaskPrototype">
+        <attribute name="canBeDeferred" attributeType="Boolean" defaultValueString="NO"/>
+        <attribute name="canBePaused" attributeType="Boolean" defaultValueString="NO"/>
+        <attribute name="canBeSkipped" attributeType="Boolean" defaultValueString="NO"/>
+        <attribute name="timeInSeconds" attributeType="Integer 16"/>
+        <relationship name="names" toMany="YES" minCount="1" deletionRule="Cascade" destinationEntity="TaskPrototypeName" inverseName="stepPrototype" inverseEntity="TaskPrototypeName"/>
+    </entity>
+    <entity name="TaskPrototypeName" representedClassName="KTTaskPrototypeName">
+        <attribute name="locale" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <relationship name="stepPrototype" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="TaskPrototype" inverseName="names" inverseEntity="TaskPrototype"/>
+    </entity>
+    <elements>
+        <element name="Routine" positionX="7" positionY="138" width="128" height="90"/>
+        <element name="Task" positionX="-164" positionY="-63" width="128" height="150"/>
+        <element name="TaskPrototype" positionX="180" positionY="-144" width="128" height="120"/>
+        <element name="TaskPrototypeName" positionX="196" positionY="18" width="128" height="90"/>
+    </elements>
+</model>

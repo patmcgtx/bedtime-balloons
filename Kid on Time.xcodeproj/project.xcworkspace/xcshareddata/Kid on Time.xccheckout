@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>37C9E21B-9F77-4CE6-8219-9C2EA91B0942</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Kid on Time</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>a5691636-453a-4fa1-8f72-782fb14b96cc++505</key>
+		<string>https://roundtripsw.svn.beanstalkapp.com/kidontime/trunk</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Kid on Time.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>a5691636-453a-4fa1-8f72-782fb14b96cc++505</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>a5691636-453a-4fa1-8f72-782fb14b96cc++505</key>
+		<string>https://roundtripsw.svn.beanstalkapp.com/kidontime</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://roundtripsw.svn.beanstalkapp.com/kidontime/trunk/Kid%20on%20Time.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>a5691636-453a-4fa1-8f72-782fb14b96cc++505</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>a5691636-453a-4fa1-8f72-782fb14b96cc++505</string>
+			<key>IDESourceControlWCCName</key>
+			<string>kidontimem</string>
+		</dict>
+	</array>
+</dict>
+</plist>

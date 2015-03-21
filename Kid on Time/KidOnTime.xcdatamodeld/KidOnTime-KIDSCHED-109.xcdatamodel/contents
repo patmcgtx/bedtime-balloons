@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11E53" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Routine" representedClassName="KTRoutine">
+        <attribute name="name" attributeType="String" defaultValueString="New Kid"/>
+        <attribute name="order" attributeType="Integer 16"/>
+        <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Task" inverseName="routine" inverseEntity="Task"/>
+        <relationship name="theme" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Theme" inverseName="routines" inverseEntity="Theme" syncable="YES"/>
+    </entity>
+    <entity name="Task" representedClassName="KTTask" parentEntity="TaskBase">
+        <relationship name="routine" optional="YES" maxCount="1" deletionRule="Nullify" ordered="YES" destinationEntity="Routine" inverseName="tasks" inverseEntity="Routine"/>
+    </entity>
+    <entity name="TaskBase" representedClassName="KTTaskBase">
+        <attribute name="canBeDeferred" attributeType="Boolean" defaultValueString="NO"/>
+        <attribute name="canBePaused" attributeType="Boolean" defaultValueString="NO"/>
+        <attribute name="canBeSkipped" attributeType="Boolean" defaultValueString="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="timeInSeconds" attributeType="Integer 16"/>
+        <attribute name="type" attributeType="String" minValueString="2" defaultValueString="default" syncable="YES"/>
+    </entity>
+    <entity name="TaskPrototype" representedClassName="KTTaskPrototype" parentEntity="TaskBase"/>
+    <entity name="Theme" representedClassName="KTTheme" syncable="YES">
+        <attribute name="nameKey" attributeType="String" minValueString="2" defaultValueString="default" indexed="YES" syncable="YES"/>
+        <relationship name="routines" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Routine" inverseName="theme" inverseEntity="Routine" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Routine" positionX="-74" positionY="171" width="128" height="105"/>
+        <element name="Task" positionX="-288" positionY="-18" width="128" height="150"/>
+        <element name="TaskBase" positionX="-153" positionY="-207" width="128" height="120"/>
+        <element name="TaskPrototype" positionX="16" positionY="-3" width="128" height="120"/>
+        <element name="Theme" positionX="160" positionY="192" width="128" height="75"/>
+    </elements>
+</model>

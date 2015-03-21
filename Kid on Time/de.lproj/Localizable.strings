@@ -1,0 +1,166 @@
+/* 
+  Localizable.strings
+  Kid on Time
+
+  Created by Patrick McGonigle on 6/7/13.
+
+*/
+
+//
+// Round Trip Software
+//
+"rts.home.url" = "http://www.roundtripsoftware.com";
+"rts.email.url" = "support@roundtripsoftware.com";
+
+//
+// Social
+//
+"twitter.app.url" = "twitter://user?screen_name=roundtripsw";
+"twitter.web.url" = "https://twitter.com/roundtripsw";
+
+"facebook.app.url" = "fb://profile/394860443966952";
+"facebook.web.url" = "https://www.facebook.com/roundtripsw";
+
+//
+// Themes
+//
+"theme.default.name" = "German! the Monkey";
+"theme.default.description" = "German! Follow this friendly primate to bed.  You can add your own pictures later.";
+
+"theme.custom.name" = "German! Blank Slate";
+"theme.custom.description" = "German! Create a routine entirely from your own pictures..";
+
+//
+// Labels
+//
+"nav.routines" = "German! Routines";
+
+"action.delete" = "German!Delete";
+"action.cancel" = "German!Cancel";
+"action.next" = "German!Next";
+"action.routine.start" = "German!Start";
+"action.task.add" = "German!Add Tasks";
+"action.routine.add" = "German!Add a Routine";
+
+"label.delete.question" = "German!Delete \"%@\"?";
+"label.tasks.pick" = "German!Pick Built-In Tasks";
+"label.tasks.camera" = "German!Take a Photo";
+"label.tasks.photos" = "German!Choose Photos";
+
+"label.minute" = "German!minute";
+"label.minutes" = "German!minutes";
+
+"label.min.time" = "German!Spend at least %i %@";
+"label.min.none" = "German!Can finish right away";
+"label.max.time" = "German!Finish within %i %@";
+"label.max.none" = "German!Take as long as you want";
+
+//
+// Titles, etc.
+//
+"title.routine.create" = "German!Create Routine";
+"title.tasks.pick" = "German!Pick Tasks";
+"title.about" = "German!About";
+
+"about.contact.title" = "German!Contact";
+"about.contact.footer" = "German!To prevent kids from wandering onto the internet, this page contains no active links.  The links can be copied for pasting into a browser.";
+"about.art.title" = "German!Art";
+"about.credits.title" = "German!Thanks to";
+
+//
+// Notifications
+//
+"notification.timer.warning" = "German!Time's almost up";
+
+//
+// Task names
+//
+"task.prototype.bath.label" = "German! bath";
+"task.prototype.pajamas.label" = "German! pajamas";
+"task.prototype.teeth.label" = "German! teeth";
+"task.prototype.hands.label" = "German! Hands";
+"task.prototype.hair.label" = "German! hair";
+"task.prototype.bathroom.label" = "German! bathroom";
+"task.prototype.story.label" = "German! story";
+"task.prototype.custom.label" = "German! picture";
+"task.prototype.shower.label" = "German! shower";
+
+"newroutine.name.title" = "German! name";
+"newroutine.type.title" = "German! Type";
+
+"privacy.policy" = "GPrivacy Policy";
+"in.app.feedback" = "GIn-app feedback";
+"about.art.illustrations.description" = "GMonkey Illustrations";
+
+//
+// Misc
+//
+"routine.name.default" = "New German! Routine";
+
+//
+// Error messages
+//
+"error.db.bad.id" = "The app data may be corrupted.  Please restart the app as soon as possible.";
+"error.db.commit.failed" = "This app has become unstable and may lose your changes.  Please restart the app as soon as possible.";
+"error.db.missing.persistentstore" = "This app did not start up properly and may not function as expected.  Please restart the app as soon as possible.";
+
+//--------------------------------------------------------------------------------------------------------
+// JIRA Mobile Connect
+//--------------------------------------------------------------------------------------------------------
+
+/* Description explaining that crash data has been found and ask the user if the data might be uplaoded to the developers server */
+"CrashDataFoundDescription" = "%@ ist bei der letzten Anwendung abgestürzt. Ihr Feedback hilft uns, diese App zu verbessern. \n Crash-Bericht senden?";
+
+/* Title showing in the alert box when crash report data has been found */
+"CrashDataFoundTitle" = "Crash-Bericht";
+
+/* Thank you message on successful feedback submission */
+"JMCFeedbackReceived" = "Vielen Dank für Ihr Feedback und Ihre Hilfe %@ zu verbessern.";
+/* Thank you title on feedback submission */
+"Thank You" = "Dankeschön";
+
+"Always" = "Immer";
+"No" = "Nein";
+"Yes" = "Ja";
+"Send" = "Senden";
+"Reply" = "Antworten";
+"Cancel" = "Abbrechen";
+"Close" = "Schließen";
+"No Comment" = "(Kein Kommentar)";
+"No Description" = "(Kein Text)";
+
+"AlertBeforeDeletingRecording" = "Möchten Sie diese Aufnahme löschen?";
+"RemoveRecording" = "Aufnahme Löschen";
+
+/** Title of 'Inbox' view **/
+"Your Feedback" = "Ihr Feedback";
+
+/** Alert View when Voice is not supported **/
+"Voice Recording" = "Tonaufnahme";
+"JMCVoiceRecordingNotSupported" = "Nicht unterstützt auf diesem Gerät. Bitte Text eingeben.";
+
+/** Alert title when message not arrived in JIRA **/
+"JMCRequestPendingTitle" = "Nachricht wird gesendet";
+/** Alert when create issue request not yet successful **/
+"JMCRequestPendingMessage" = "Diese Nachricht wurde noch nicht gesendet. Bitte probieren Sie es gleich noch einmal.";
+
+/** Alert title when a request has reached the maximum number of retry attempts and will be attempted no more... */
+"JMCRequestPermErrorTitle" = "Nachricht nicht gesendet";
+/** Alert message when a request has reached the maximum number of retry attempts and will be attempted no more... */
+"JMCRequestPermErrorMessage" = "Diese Nachricht wurde nicht gesendet. Bitte prüfen Sie Ihre Internetverbindung und probieren Sie es noch einmal";
+
+/** This feedback has been deleted. Please create new feedback instead **/
+"JMCDeletedIssueMessage" = "Dieses Feedback wurde gelöscht. Bitte ein neues Feedback hinterlassen.";
+
+"JMCInAppNotification-Singular" = "%d neue Nachricht von Entwickler";
+"JMCInAppNotification-Plural" = "%d neue Nachrichten von Entwickler";
+
+"JMCAttachmentsTitle" = "Anhänge";
+"JMCRecordingLabel" = "Tonaufnahme";
+"JMCImageLabel" = "Bild";
+"JMCCustomerLabel" = "Sonstiges";
+
+//--------------------------------------------------------------------------------------------------------
+// *** Also see JMCLocalizable.strings***
+//--------------------------------------------------------------------------------------------------------
+

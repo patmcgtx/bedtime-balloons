@@ -1,0 +1,157 @@
+/* 
+  Localizable.strings
+  Kid on Time
+
+  Created by Patrick McGonigle on 6/7/13.
+
+*/
+
+//
+// Round Trip Software
+//
+"rts.home.url" = "http://www.roundtripsoftware.com";
+"rts.email.url" = "support@roundtripsoftware.com";
+"app.help.url" = "http://www.roundtripsoftware.com/help/bedtime";
+"app.itunes.url" = "https://itunes.apple.com/us/app/bedtime-balloons-customizable/id908141364?ls=1&mt=8";
+
+//
+// Social
+//
+"twitter.app.url" = "twitter://user?screen_name=roundtripsw";
+"twitter.web.url" = "https://twitter.com/roundtripsw";
+
+"facebook.app.url" = "fb://profile/394860443966952";
+"facebook.web.url" = "https://www.facebook.com/roundtripsw";
+
+//
+// Themes
+//
+"theme.default.name" = "Mabel the Monkey";
+"theme.default.description" = "Follow this friendly primate to bed.  Add you own pictures too.";
+
+"theme.custom.name" = "Use My Own Pictures";
+"theme.custom.description" = "Create a routine entirely from your own pictures.";
+
+//
+// Labels
+//
+"nav.routines" = "Routines";
+
+"action.delete" = "Delete";
+"action.cancel" = "Cancel";
+"action.next" = "Next";
+"action.routine.start" = "Start";
+"action.task.add" = "Add Tasks";
+"action.routine.add" = "Add a Routine";
+
+"label.delete.question" = "Delete \"%@\"?";
+"label.tasks.pick" = "Pick Built-In Tasks";
+"label.tasks.camera" = "Take a Photo";
+"label.tasks.photos" = "Choose Photos";
+
+"label.minute" = "minute";
+"label.minutes" = "minutes";
+"label.minute.short" = "min";
+"label.minutes.short" = "mins";
+
+"label.min.time" = "Spend at least %i %@";
+"label.min.none" = "Can finish right away";
+"label.max.time" = "Finish within %i %@";
+"label.max.none" = "Take as long as you want";
+
+"label.ok" = "OK";
+"label.app.version" = "App Version";
+
+"photo.accessdenied.label" = "Cannot Access Photos";
+"photo.accessdenied.message" = "To allow this app to access photos, enable it in the Settings app under Privacy > Photos.";
+
+//
+// Titles, etc.
+//
+"title.routine.create" = "Create Routine";
+"title.tasks.pick" = "Pick Tasks";
+
+"about.contact.title" = "Share your thoughts";
+"about.contact.footer" = "To prevent kids from wandering onto the internet, this page contains no active links.  Tap to copy a link.";
+"about.help.title" = "Online Help";
+"about.appstore.title" = "App Store Page";
+"about.appstore.subtitle" = "Your review makes a big difference to us!";
+"about.art.title" = "Art";
+"about.art.illustrations.description" = "Monkey Illustrations";
+"about.credits.title" = "Thanks to";
+
+"newroutine.name.title" = "Routine Name";
+"newroutine.type.title" = "Routine Type";
+
+"tab.routines.title" = "Routines";
+"tab.help.title" = "Help";
+"tab.about.title" = "About";
+
+//
+// Notifications
+//
+"notification.timer.warning" = "Time's almost up";
+
+//
+// Task names
+//
+"task.prototype.bath.label" = "Take a bath";
+"task.prototype.pajamas.label" = "Put on pajamas";
+"task.prototype.teeth.label" = "Brush teeth";
+"task.prototype.hands.label" = "Wash hands";
+"task.prototype.hair.label" = "Brush hair";
+"task.prototype.bathroom.label" = "Go to the bathroom";
+"task.prototype.story.label" = "Read a story";
+"task.prototype.custom.label" = "Use your own picture";
+"task.prototype.shower.label" = "Take a shower";
+
+
+//
+// Misc
+//
+"routine.name.default" = "New Routine";
+"routine.name.sample" = "Sample Routine";
+"privacy.policy" = "Privacy Policy";
+"add.photos.later" = "You can add your own photos later.";
+"date.morning.titlecase" = "Morning";
+"date.night.titlecase" = "Night";
+//"in.app.feedback" = "In-app feedback";
+
+//
+// Parental gate
+//
+//"parentalgate.title" = "For Parents Only";
+//"parentalgate.purpose.photos" = "To select photos";
+//"parentalgate.purpose.camera" = "To take a picture";
+
+//
+// Numbers
+//
+//"number.0" = "zero";
+//"number.1" = "one";
+//"number.2" = "two";
+//"number.3" = "three";
+//"number.4" = "four";
+//"number.5" = "five";
+
+//
+// Swipe gesture
+//
+//"swipe.instructions.format" = "Swipe %@ %@";
+//"swipe.direction.left" = "to the left";
+//"swipe.direction.right" = "to the right";
+//"swipe.direction.up" = "up";
+//"swipe.direction.down" = "down";
+//"swipe.finger.singular" = "finger";
+//"swipe.finger.plural" = "fingers";
+
+//
+// Error messages
+//
+"error.db.bad.id" = "The app data may be corrupted.  Please restart the app as soon as possible.";
+"error.db.commit.failed" = "This app has become unstable and may lose your changes.  Please restart the app as soon as possible.";
+"error.db.missing.persistentstore" = "This app did not start up properly and may not function as expected.  Please restart the app as soon as possible.";
+
+//--------------------------------------------------------------------------------------------------------
+// *** Also see JMCLocalizable.strings***
+//--------------------------------------------------------------------------------------------------------

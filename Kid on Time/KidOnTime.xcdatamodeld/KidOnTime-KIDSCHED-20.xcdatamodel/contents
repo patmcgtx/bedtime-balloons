@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="864" systemVersion="11D50" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Routine" representedClassName="KTRoutine">
+        <attribute name="name" attributeType="String" defaultValueString="New Kid"/>
+        <attribute name="order" attributeType="Integer 16"/>
+    </entity>
+    <elements>
+        <element name="Routine" positionX="-720" positionY="-441" width="128" height="75"/>
+    </elements>
+</model>

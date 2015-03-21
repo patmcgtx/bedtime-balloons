@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="864" systemVersion="11D50" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Routine" representedClassName="KTRoutine">
+        <attribute name="name" attributeType="String" defaultValueString="New Kid"/>
+        <attribute name="order" attributeType="Integer 16"/>
+        <relationship name="steps" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Step" inverseName="routine" inverseEntity="Step"/>
+    </entity>
+    <entity name="Step" representedClassName="KTStep">
+        <attribute name="canBeDeferred" attributeType="Boolean" defaultValueString="NO"/>
+        <attribute name="canBePaused" attributeType="Boolean" defaultValueString="NO"/>
+        <attribute name="canBeSkipped" attributeType="Boolean" defaultValueString="NO"/>
+        <attribute name="name" attributeType="String" minValueString="1" defaultValueString="New Step"/>
+        <relationship name="routine" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Routine" inverseName="steps" inverseEntity="Routine"/>
+    </entity>
+    <elements>
+        <element name="Routine" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="Step" positionX="-11" positionY="-9" width="128" height="120"/>
+    </elements>
+</model>

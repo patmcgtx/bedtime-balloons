@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Routine" representedClassName="KTRoutine">
+        <attribute name="name" attributeType="String" defaultValueString="New Kid">
+            <userInfo/>
+        </attribute>
+        <attribute name="order" attributeType="Integer 16">
+            <userInfo/>
+        </attribute>
+        <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Task" inverseName="routine" inverseEntity="Task">
+            <userInfo/>
+        </relationship>
+        <relationship name="theme" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Theme" inverseName="routines" inverseEntity="Theme" syncable="YES"/>
+        <userInfo/>
+    </entity>
+    <entity name="Task" representedClassName="KTTask" parentEntity="TaskBase">
+        <relationship name="routine" optional="YES" maxCount="1" deletionRule="Nullify" ordered="YES" destinationEntity="Routine" inverseName="tasks" inverseEntity="Routine">
+            <userInfo/>
+        </relationship>
+        <userInfo/>
+    </entity>
+    <entity name="TaskBase" representedClassName="KTTaskBase">
+        <attribute name="canBeDeferred" attributeType="Boolean" defaultValueString="NO">
+            <userInfo/>
+        </attribute>
+        <attribute name="canBePaused" attributeType="Boolean" defaultValueString="NO">
+            <userInfo/>
+        </attribute>
+        <attribute name="canBeSkipped" attributeType="Boolean" defaultValueString="NO">
+            <userInfo/>
+        </attribute>
+        <attribute name="minTimeInSeconds" attributeType="Integer 16" minValueString="0" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="timeInSeconds" attributeType="Integer 16">
+            <userInfo/>
+        </attribute>
+        <attribute name="type" attributeType="String" minValueString="2" defaultValueString="default" syncable="YES"/>
+        <userInfo/>
+    </entity>
+    <entity name="TaskPrototype" representedClassName="KTTaskPrototype" parentEntity="TaskBase">
+        <attribute name="displayOrder" optional="YES" attributeType="Integer 16" minValueString="0" defaultValueString="1000" syncable="YES"/>
+        <userInfo/>
+    </entity>
+    <entity name="Theme" representedClassName="KTTheme" syncable="YES">
+        <attribute name="displayOrder" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="nameKey" attributeType="String" minValueString="2" defaultValueString="default" indexed="YES" syncable="YES"/>
+        <relationship name="routines" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Routine" inverseName="theme" inverseEntity="Routine" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Routine" positionX="-74" positionY="171" width="128" height="105"/>
+        <element name="Task" positionX="-288" positionY="-18" width="128" height="150"/>
+        <element name="TaskBase" positionX="-153" positionY="-207" width="128" height="150"/>
+        <element name="TaskPrototype" positionX="16" positionY="-3" width="128" height="60"/>
+        <element name="Theme" positionX="160" positionY="192" width="128" height="90"/>
+    </elements>
+</model>
