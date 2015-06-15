@@ -322,8 +322,10 @@
         UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:NSLocalizedString(@"label.routine.stop", nil)
                                                          message:nil
                                                         delegate:self
-                                               cancelButtonTitle:NSLocalizedString(@"action.routine.continue", nil)
-                                               otherButtonTitles:NSLocalizedString(@"action.routine.stop", nil), nil];
+                                               cancelButtonTitle:nil
+                                               otherButtonTitles:NSLocalizedString(@"action.routine.stop", nil),
+                              NSLocalizedString(@"action.routine.continue", nil),
+                              nil];
         [alert show];
     }
     else {
@@ -398,7 +400,7 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     
-    if ( buttonIndex != alertView.cancelButtonIndex ) {
+    if ([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"action.routine.stop", nil)]) {
         [self actuallyStopRoutine];
     }
 }
