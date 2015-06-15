@@ -40,6 +40,9 @@
 @property (strong, nonatomic)  NSTimer* cancelVillainVisitTimer;
 @property (strong, nonatomic)  NSTimer* villainVisitTimer;
 @property (nonatomic) BOOL villainStartedPoppingForThisTask;
+@property (nonatomic) int numRewardBalloonsEarned;
+@property (nonatomic) int numRewardBalloonsPopped;
+@property (nonatomic) BOOL donePoppingRewardBalloons;
 
 @end
 
@@ -154,14 +157,12 @@
     // These are centered
     self.activityIndicator.center = CGPointMake(screenBounds.size.width / 2.0,
                                                 screenBounds.size.height / 2.0);
-    /*
-    self.taskImageView.center = CGPointMake(screenBounds.size.width / 2.0,
-                                            self.taskImageView.center.y / 2.0);
-    self.taskImageView.center = CGPointMake(self.taskImageView.center.x,
-                                            self.taskImageView.center.y);
-     */    
+    
+    self.numRewardBalloonsEarned = INT_MAX;
+    self.numRewardBalloonsPopped = 0;
+    self.donePoppingRewardBalloons = NO;
 }
-
+    
 - (void)viewDidUnload
 {
     [self setCancelButton:nil];
@@ -209,6 +210,11 @@
                                                  name:KTNotificationAppWillEnterForeground
                                                object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleRewardBalloonPopped:)
+                                                 name:KTNotificationRewardBalloonPopped
+                                               object:nil];
+
     // Adjust the GUI for full-screen custom tasks if applicable
     if ( [self.routineEntity.theme isCustomTheme] ) {
         [self adjustViewForCustomRoutine];
@@ -302,11 +308,17 @@
     }
 }
 
+-(void) handleRewardBalloonPopped:(NSNotification*) notification {
+    
+    self.numRewardBalloonsPopped++;
+    self.donePoppingRewardBalloons = self.numRewardBalloonsPopped >= self.numRewardBalloonsEarned;
+}
+
 #pragma mark - Actions
 
 - (IBAction)stopRoutineTapped:(id)sender {
     
-    if (!self.isRoutineComplete) {
+    if (!self.donePoppingRewardBalloons) {
         UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:NSLocalizedString(@"label.routine.stop", nil)
                                                          message:nil
                                                         delegate:self
@@ -436,6 +448,7 @@
         [self.doneButton setImage:touchImage forState:UIControlStateNormal];
         self.doneButton.enabled = NO;
         self.isRoutineComplete = YES;
+        self.numRewardBalloonsEarned = [self.animationLayer numBalloonsEarned];
         [self presentReward];
     }
     else {

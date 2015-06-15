@@ -8,6 +8,7 @@
 
 #import "KTUserPoppableBalloon.h"
 #import "RTSLog.h"
+#import "KTConstants.h"
 
 @interface KTUserPoppableBalloon ()
 
@@ -49,6 +50,10 @@ withStartingPosition:(CGPoint) startingPosVal
         }
         
         retval = YES;
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:KTNotificationRewardBalloonPopped
+                                                            object:self
+                                                          userInfo:nil];
     }
 
     return retval;

@@ -42,6 +42,7 @@
 /*
  * Tells the delegate to kill the routine
  */
+// TODO Is this used?
 -(void) exitRoutine;
 
 /*

@@ -10,28 +10,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Kid on Time/KTRunRoutineTaskController.m"
-            timestampString = "456020963.631837"
+            timestampString = "456022884.826222"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "308"
-            endingLineNumber = "308"
-            landmarkName = "-stopRoutineTapped:"
+            startingLineNumber = "418"
+            endingLineNumber = "418"
+            landmarkName = "-doneCollectingBalloons"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Kid on Time/KTInvisibleCloseButton.m"
-            timestampString = "456020517.898118"
+            filePath = "Kid on Time/KTRunRoutineTaskController.m"
+            timestampString = "456022884.826222"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "-quitRoutineIfTouched:"
+            startingLineNumber = "409"
+            endingLineNumber = "409"
+            landmarkName = "-finishedWithResultRatio:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Kid on Time/KTUserPoppableBalloon.m"
+            timestampString = "456021887.661476"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "-popIfTouched:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Kid on Time/KTRunRoutineTaskController.m"
-            timestampString = "456020963.631837"
+            timestampString = "456022911.619763"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "406"
-            endingLineNumber = "406"
-            landmarkName = "-doneCollectingBalloons"
+            startingLineNumber = "315"
+            endingLineNumber = "315"
+            landmarkName = "-handleRewardBalloonPopped:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
