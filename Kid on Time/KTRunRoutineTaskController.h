@@ -15,6 +15,7 @@
 
 @property (nonatomic) NSInteger activeTaskNum;
 @property (nonatomic, strong) KTRoutine* routineEntity;
+@property (nonatomic) BOOL isRoutineComplete;
 
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;

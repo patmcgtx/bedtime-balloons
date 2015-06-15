@@ -125,9 +125,7 @@
     self.whenMinTimeFinished = nil;
     self.whenWentToBg = nil;
     
-    //_visible = NO;
-    
-    //UIWindow* window = [RTSAppHelper appWindow];
+    self.isRoutineComplete = NO;
     
     //
     // Handle iPhone 5, etc.  Move elements to the right side as needed.
@@ -307,13 +305,18 @@
 #pragma mark - Actions
 
 - (IBAction)stopRoutineTapped:(id)sender {
-
-    UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:NSLocalizedString(@"label.routine.stop", nil)
-                                                     message:nil
-                                                    delegate:self
-                                           cancelButtonTitle:NSLocalizedString(@"action.routine.continue", nil)
-                                           otherButtonTitles:NSLocalizedString(@"action.routine.stop", nil), nil];
-    [alert show];
+    
+    if (!self.isRoutineComplete) {
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:NSLocalizedString(@"label.routine.stop", nil)
+                                                         message:nil
+                                                        delegate:self
+                                               cancelButtonTitle:NSLocalizedString(@"action.routine.continue", nil)
+                                               otherButtonTitles:NSLocalizedString(@"action.routine.stop", nil), nil];
+        [alert show];
+    }
+    else {
+        [self actuallyStopRoutine];
+    }
 }
 
 
@@ -432,6 +435,7 @@
         UIImage* touchImage = [UIImage imageNamed:@"touch"];
         [self.doneButton setImage:touchImage forState:UIControlStateNormal];
         self.doneButton.enabled = NO;
+        self.isRoutineComplete = YES;
         [self presentReward];
     }
     else {
@@ -450,6 +454,7 @@
 }
 
 -(void) exitRoutine {
+    // TODO Is this used?
     [self stopRoutineTapped:nil];
 }
 
