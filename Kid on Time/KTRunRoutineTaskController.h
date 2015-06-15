@@ -11,7 +11,7 @@
 #import "cocos2d.h"
 #import "KTRoutineAnimationsDelegate.h"
 
-@interface KTRunRoutineTaskController : UIViewController <KTRoutineAnimationsDelegate>
+@interface KTRunRoutineTaskController : UIViewController <KTRoutineAnimationsDelegate, UIAlertViewDelegate>
 
 @property (nonatomic) NSInteger activeTaskNum;
 @property (nonatomic, strong) KTRoutine* routineEntity;
@@ -30,7 +30,7 @@
 @property (weak, nonatomic) IBOutlet UIView *minTimerBackground;
 @property (weak, nonatomic) IBOutlet UIImageView *userPhotoBlankSlate;
 
-- (IBAction)stopRoutine:(id)sender;
+- (IBAction)stopRoutineTapped:(id)sender;
 - (IBAction)doneWithTask:(id)sender;
 - (IBAction)pauseRoutine:(id)sender;
 - (IBAction)resumeRoutine:(id)sender;

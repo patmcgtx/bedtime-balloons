@@ -44,6 +44,10 @@
 "action.task.add" = "Add Tasks";
 "action.routine.add" = "Add a Routine";
 
+"label.routine.stop" = "Stop the Routine?";
+"action.routine.stop" = "Stop";
+"action.routine.continue" = "Keep Going";
+
 "label.delete.question" = "Delete \"%@\"?";
 "label.tasks.pick" = "Pick Built-In Tasks";
 "label.tasks.camera" = "Take a Photo";

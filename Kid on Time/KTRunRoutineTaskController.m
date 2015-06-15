@@ -58,6 +58,7 @@
 -(void) adjustViewForCustomRoutine;
 -(void) hideOrShowTimeLimitControls;
 -(void) calculateTiming;
+-(void) actuallyStopRoutine;
 
 @end
 
@@ -276,7 +277,7 @@
 
 - (void) goToBackground {
     
-    // TODO Manage overlap between this and stopRoutine
+    // TODO Manage overlap between this and actuallyStopRoutine
     
     // Stop any ongoing sounds
     [[KTSoundPlayer sharedInstance] stopAllSounds];
@@ -305,26 +306,16 @@
 
 #pragma mark - Actions
 
-- (IBAction)stopRoutine:(id)sender {
+- (IBAction)stopRoutineTapped:(id)sender {
 
-    // Stop any ongoing sounds
-    [[KTSoundPlayer sharedInstance] stopAllSounds];
-    
-    // Don't need warnings any more (some might have gone already)
-    [self cancelScheduledJobsWithLocalNotifications:YES];
-    
-    // Just make double sure that we don't have any notifications
-    // show up after leaving the routine for any reason
-    [KTTaskNotifiication cancelAll];
-    
-    // Go back to the routine launch UI
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
-    [[KTSoundPlayer sharedInstance] stopAllSounds];
-    
-    //[self dismissViewControllerAnimated:YES completion:nil];
-    //[self.parentViewController dismissViewControllerAnimated:YES completion:nil];
+    UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:NSLocalizedString(@"label.routine.stop", nil)
+                                                     message:nil
+                                                    delegate:self
+                                           cancelButtonTitle:NSLocalizedString(@"action.routine.continue", nil)
+                                           otherButtonTitles:NSLocalizedString(@"action.routine.stop", nil), nil];
+    [alert show];
 }
+
 
 - (IBAction)doneWithTask:(id)sender {       
 
@@ -388,13 +379,17 @@
     [self scheduleJobs];
 }
 
-#pragma mark - KTRunRoutineCocos2dLayerDelegate
+#pragma mark - UIAletViewDelegate
 
-/*
--(void) donePoppingBalloons {
-    // Anything to do?
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if ( buttonIndex != alertView.cancelButtonIndex ) {
+        [self actuallyStopRoutine];
+    }
 }
-*/
+
+
+#pragma mark - KTRunRoutineCocos2dLayerDelegate
 
 -(void) finishedWithResultRatio:(NSString*) resultRatio {
     self.timeLabel.hidden = NO;
@@ -455,7 +450,7 @@
 }
 
 -(void) exitRoutine {
-    [self stopRoutine:nil];
+    [self stopRoutineTapped:nil];
 }
 
 /*
@@ -970,6 +965,27 @@
     }
     
     return retval;
+}
+
+-(void) actuallyStopRoutine {
+    
+    // Stop any ongoing sounds
+    [[KTSoundPlayer sharedInstance] stopAllSounds];
+    
+    // Don't need warnings any more (some might have gone already)
+    [self cancelScheduledJobsWithLocalNotifications:YES];
+    
+    // Just make double sure that we don't have any notifications
+    // show up after leaving the routine for any reason
+    [KTTaskNotifiication cancelAll];
+    
+    // Go back to the routine launch UI
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    [[KTSoundPlayer sharedInstance] stopAllSounds];
+    
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    //[self.parentViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void) initCocos2dLayer {
