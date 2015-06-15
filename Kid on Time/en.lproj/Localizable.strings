@@ -84,6 +84,16 @@
 "about.art.illustrations.description" = "Monkey Illustrations";
 "about.credits.title" = "Thanks to";
 
+"about.rtsapps.title" = "More apps you might like";
+
+"about.rtsapps.mathcards.title" = "Continuous Math Cards";
+"about.rtsapps.mathcards.subtitle" = "Flexible flash cards for any level";
+"app.mathcards.itunes.url" = "https://itunes.apple.com/us/app/continuous-math-cards-flexible/id932437763?mt=8";
+
+"about.rtsapps.santa.title" = "Where in the World is Santa Claus?";
+"about.rtsapps.santa.subtitle" = "Scan the globe for Santa and listen in";
+"app.santa.itunes.url" = "https://itunes.apple.com/us/app/where-in-world-is-santa-claus/id580456274?mt=8";
+
 "newroutine.name.title" = "Routine Name";
 "newroutine.type.title" = "Routine Type";
 
