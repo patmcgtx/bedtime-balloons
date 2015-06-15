@@ -72,7 +72,6 @@
 //-(CCSequence*) buildAnimationsToWrapUpTask:(BOOL) isLastTask;
 -(int) routinePerformancePercentage;
 -(KTRoutineGrade) routinePerformanceResult;
--(int) numBalloonsEarned;
 -(NSArray*) rewardBalloonInfo;
 //-(void) revertRunningTaskToNormalTime;
 //-(void) resetCurentTaskToTime:(NSTimeInterval) newTimeInSeconds
@@ -176,7 +175,6 @@
                                  atPos:cocosPos
                                  atZPos:200
                                  delegate:self.delegate];
-    
 }
 
 #pragma mark - Main actions
@@ -483,9 +481,9 @@
     }
     
     // And finally push each one into the screen with a slight delay between each
-    CCSpawn* simultaneousBalloobMoves = [CCSpawn actionWithArray:balloonMoves];
+    CCSpawn* simultaneousBalloonMoves = [CCSpawn actionWithArray:balloonMoves];
     //CCSequence* simultaneousBalloobMoves = [CCSequence actionWithArray:balloonMoves];
-    [self runAction:simultaneousBalloobMoves];    
+    [self runAction:simultaneousBalloonMoves];
 }
 
 -(void) hideTimeLimitControls {

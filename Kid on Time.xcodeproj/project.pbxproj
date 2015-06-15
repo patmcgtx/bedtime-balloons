@@ -829,8 +829,6 @@
 		694E7FED1597DE6B00A63EDC /* KTBalloon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTBalloon.m; sourceTree = "<group>"; };
 		694E7FF21597EC0C00A63EDC /* KTCocos2dSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KTCocos2dSprite.h; path = ../KTCocos2dSprite.h; sourceTree = "<group>"; };
 		694E7FF31597EC0C00A63EDC /* KTCocos2dSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KTCocos2dSprite.m; path = ../KTCocos2dSprite.m; sourceTree = "<group>"; };
-		694F2EC51587EDAC00B3FBFF /* KTRunRoutineCocos2dLayer.hx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = KTRunRoutineCocos2dLayer.hx; sourceTree = "<group>"; };
-		694F2EC61587EDAC00B3FBFF /* KTRunRoutineCocos2dLayer.mx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = KTRunRoutineCocos2dLayer.mx; sourceTree = "<group>"; };
 		694F410E15154611006E28C1 /* KTTaskBasePlus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTTaskBasePlus.h; sourceTree = "<group>"; };
 		694F410F15154611006E28C1 /* KTTaskBasePlus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTTaskBasePlus.m; sourceTree = "<group>"; };
 		6950BC331555DAFD00768A30 /* KTRunRoutineTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTRunRoutineTaskController.h; sourceTree = "<group>"; };
@@ -1713,8 +1711,6 @@
 		6945432B1568028800892036 /* Cocos Stuff */ = {
 			isa = PBXGroup;
 			children = (
-				694F2EC51587EDAC00B3FBFF /* KTRunRoutineCocos2dLayer.hx */,
-				694F2EC61587EDAC00B3FBFF /* KTRunRoutineCocos2dLayer.mx */,
 				6943EF5C15ABAB0F00A88BCC /* KTRunRoutineCocos2dLayerDelegate.h */,
 				69740264174998660012710E /* KTRoutineAnimationsLayer.h */,
 				69740265174998660012710E /* KTRoutineAnimationsLayer.m */,
@@ -3235,7 +3231,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e01d4e54-73d2-4107-a7b7-2d689c758355";
+				PROVISIONING_PROFILE = "fbffbdf3-f019-4da5-954e-61eeaf625573";
 				USER_HEADER_SEARCH_PATHS = "cocos2dlib/**";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;

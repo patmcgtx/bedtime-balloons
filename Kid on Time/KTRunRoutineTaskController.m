@@ -40,6 +40,9 @@
 @property (strong, nonatomic)  NSTimer* cancelVillainVisitTimer;
 @property (strong, nonatomic)  NSTimer* villainVisitTimer;
 @property (nonatomic) BOOL villainStartedPoppingForThisTask;
+@property (nonatomic) int numRewardBalloonsEarned;
+@property (nonatomic) int numRewardBalloonsPopped;
+@property (nonatomic) BOOL donePoppingRewardBalloons;
 
 @end
 
@@ -58,6 +61,7 @@
 -(void) adjustViewForCustomRoutine;
 -(void) hideOrShowTimeLimitControls;
 -(void) calculateTiming;
+-(void) actuallyStopRoutine;
 
 @end
 
@@ -124,9 +128,7 @@
     self.whenMinTimeFinished = nil;
     self.whenWentToBg = nil;
     
-    //_visible = NO;
-    
-    //UIWindow* window = [RTSAppHelper appWindow];
+    self.isRoutineComplete = NO;
     
     //
     // Handle iPhone 5, etc.  Move elements to the right side as needed.
@@ -155,14 +157,12 @@
     // These are centered
     self.activityIndicator.center = CGPointMake(screenBounds.size.width / 2.0,
                                                 screenBounds.size.height / 2.0);
-    /*
-    self.taskImageView.center = CGPointMake(screenBounds.size.width / 2.0,
-                                            self.taskImageView.center.y / 2.0);
-    self.taskImageView.center = CGPointMake(self.taskImageView.center.x,
-                                            self.taskImageView.center.y);
-     */    
+    
+    self.numRewardBalloonsEarned = INT_MAX;
+    self.numRewardBalloonsPopped = 0;
+    self.donePoppingRewardBalloons = NO;
 }
-
+    
 - (void)viewDidUnload
 {
     [self setCancelButton:nil];
@@ -210,6 +210,11 @@
                                                  name:KTNotificationAppWillEnterForeground
                                                object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleRewardBalloonPopped:)
+                                                 name:KTNotificationRewardBalloonPopped
+                                               object:nil];
+
     // Adjust the GUI for full-screen custom tasks if applicable
     if ( [self.routineEntity.theme isCustomTheme] ) {
         [self adjustViewForCustomRoutine];
@@ -276,7 +281,7 @@
 
 - (void) goToBackground {
     
-    // TODO Manage overlap between this and stopRoutine
+    // TODO Manage overlap between this and actuallyStopRoutine
     
     // Stop any ongoing sounds
     [[KTSoundPlayer sharedInstance] stopAllSounds];
@@ -303,28 +308,31 @@
     }
 }
 
+-(void) handleRewardBalloonPopped:(NSNotification*) notification {
+    
+    self.numRewardBalloonsPopped++;
+    self.donePoppingRewardBalloons = self.numRewardBalloonsPopped >= self.numRewardBalloonsEarned;
+}
+
 #pragma mark - Actions
 
-- (IBAction)stopRoutine:(id)sender {
-
-    // Stop any ongoing sounds
-    [[KTSoundPlayer sharedInstance] stopAllSounds];
+- (IBAction)stopRoutineTapped:(id)sender {
     
-    // Don't need warnings any more (some might have gone already)
-    [self cancelScheduledJobsWithLocalNotifications:YES];
-    
-    // Just make double sure that we don't have any notifications
-    // show up after leaving the routine for any reason
-    [KTTaskNotifiication cancelAll];
-    
-    // Go back to the routine launch UI
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
-    [[KTSoundPlayer sharedInstance] stopAllSounds];
-    
-    //[self dismissViewControllerAnimated:YES completion:nil];
-    //[self.parentViewController dismissViewControllerAnimated:YES completion:nil];
+    if (!self.donePoppingRewardBalloons) {
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:NSLocalizedString(@"label.routine.stop", nil)
+                                                         message:nil
+                                                        delegate:self
+                                               cancelButtonTitle:nil
+                                               otherButtonTitles:NSLocalizedString(@"action.routine.stop", nil),
+                              NSLocalizedString(@"action.routine.continue", nil),
+                              nil];
+        [alert show];
+    }
+    else {
+        [self actuallyStopRoutine];
+    }
 }
+
 
 - (IBAction)doneWithTask:(id)sender {       
 
@@ -388,13 +396,17 @@
     [self scheduleJobs];
 }
 
-#pragma mark - KTRunRoutineCocos2dLayerDelegate
+#pragma mark - UIAletViewDelegate
 
-/*
--(void) donePoppingBalloons {
-    // Anything to do?
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if ([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"action.routine.stop", nil)]) {
+        [self actuallyStopRoutine];
+    }
 }
-*/
+
+
+#pragma mark - KTRunRoutineCocos2dLayerDelegate
 
 -(void) finishedWithResultRatio:(NSString*) resultRatio {
     self.timeLabel.hidden = NO;
@@ -437,6 +449,8 @@
         UIImage* touchImage = [UIImage imageNamed:@"touch"];
         [self.doneButton setImage:touchImage forState:UIControlStateNormal];
         self.doneButton.enabled = NO;
+        self.isRoutineComplete = YES;
+        self.numRewardBalloonsEarned = [self.animationLayer numBalloonsEarned];
         [self presentReward];
     }
     else {
@@ -455,7 +469,8 @@
 }
 
 -(void) exitRoutine {
-    [self stopRoutine:nil];
+    // TODO Is this used?
+    [self stopRoutineTapped:nil];
 }
 
 /*
@@ -970,6 +985,27 @@
     }
     
     return retval;
+}
+
+-(void) actuallyStopRoutine {
+    
+    // Stop any ongoing sounds
+    [[KTSoundPlayer sharedInstance] stopAllSounds];
+    
+    // Don't need warnings any more (some might have gone already)
+    [self cancelScheduledJobsWithLocalNotifications:YES];
+    
+    // Just make double sure that we don't have any notifications
+    // show up after leaving the routine for any reason
+    [KTTaskNotifiication cancelAll];
+    
+    // Go back to the routine launch UI
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    [[KTSoundPlayer sharedInstance] stopAllSounds];
+    
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    //[self.parentViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void) initCocos2dLayer {

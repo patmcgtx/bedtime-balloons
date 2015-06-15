@@ -18,6 +18,7 @@
  Called on the delegate when the cocos2d layer has finished the current
  task and is ready to start the next one.
  */
+// TODO Is this used?
 -(void)readyForNextTask;
 
 // Gives the exact location of the close/cancel button

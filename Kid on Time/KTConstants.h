@@ -59,6 +59,7 @@
 #define KTNotificationDidAddRoutine @"KTNotificationDidAddRoutine"
 #define KTNotificationDidDeleteTask @"KTNotificationDidDeleteTask"
 #define KTNotificationDidAddTasksToRoutine @"KTNotificationDidAddTasksToRoutine" // In addition to KTNotificationRoutineTasksDidChange for new tasks
+#define KTNotificationRewardBalloonPopped @"KTNotificationRewardBalloonPopped"
 
 // Action request notifications (to avoid tight coupling in some cases)
 #define KTNotificationDoPresentActionSheet @"KTNotificationDoPresentActionSheet"

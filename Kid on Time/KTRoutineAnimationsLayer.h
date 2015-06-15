@@ -94,4 +94,6 @@
 -(void) pauseAnimations;
 -(void) resumeAnimations;
 
+-(int) numBalloonsEarned;
+
 @end
