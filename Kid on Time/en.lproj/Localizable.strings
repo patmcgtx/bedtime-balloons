@@ -44,8 +44,8 @@
 "action.task.add" = "Add Tasks";
 "action.routine.add" = "Add a Routine";
 
-"label.routine.stop" = "Stop the Routine?";
-"action.routine.stop" = "Stop";
+"label.routine.stop" = "Exit the Routine?";
+"action.routine.stop" = "Exit";
 "action.routine.continue" = "Keep Going";
 
 "label.delete.question" = "Delete \"%@\"?";

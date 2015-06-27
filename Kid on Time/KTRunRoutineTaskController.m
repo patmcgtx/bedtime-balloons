@@ -321,11 +321,8 @@
     if (!self.donePoppingRewardBalloons) {
         UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:NSLocalizedString(@"label.routine.stop", nil)
                                                          message:nil
-                                                        delegate:self
-                                               cancelButtonTitle:nil
-                                               otherButtonTitles:NSLocalizedString(@"action.routine.stop", nil),
-                              NSLocalizedString(@"action.routine.continue", nil),
-                              nil];
+                                                        delegate:self                                               cancelButtonTitle:NSLocalizedString(@"action.routine.continue", nil)
+                                               otherButtonTitles:NSLocalizedString(@"action.routine.stop", nil), nil];
         [alert show];
     }
     else {
@@ -400,7 +397,7 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     
-    if ([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"action.routine.stop", nil)]) {
+    if ( buttonIndex != alertView.cancelButtonIndex ) {
         [self actuallyStopRoutine];
     }
 }
