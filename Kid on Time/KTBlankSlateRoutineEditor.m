@@ -31,13 +31,13 @@
     return self;
 }
 
-#pragma mark - ELCImagePickerControllerDelegate for selecting photos from the library
+#pragma mark - GMImagePickerController
 
-- (void)elcImagePickerController:(ELCImagePickerController *)picker didFinishPickingMediaWithInfo:(NSArray *)selectImageInfo {
-    [self saveImagesAsTasks:selectImageInfo];
+- (void)assetsPickerController:(GMImagePickerController *)picker didFinishPickingAssets:(NSArray *)assets {
+    [self saveImagesAsTasks:assets];
 }
 
-- (void)elcImagePickerControllerDidCancel:(ELCImagePickerController *)picker {
+- (void)assetsPickerControllerDidCancel:(GMImagePickerController *)picker {
     [self cancel];
 }
 
@@ -53,21 +53,39 @@
 
 #pragma mark - Internal helpers
 
--(void) saveImagesAsTasks:(NSArray *)selectImageInfo {
+-(void) saveImagesAsTasks:(NSArray *)selectedAssets {
     
-    NSMutableOrderedSet* tasksToAdd = [NSMutableOrderedSet orderedSetWithCapacity:[selectImageInfo count]];
+    NSMutableOrderedSet* tasksToAdd = [NSMutableOrderedSet orderedSetWithCapacity:[selectedAssets count]];
     
     // To map tasks to images
-    NSMutableArray* imagesForTasksToAdd = [NSMutableArray arrayWithCapacity:[selectImageInfo count]];
+    NSMutableArray* imagesForTasksToAdd = [NSMutableArray arrayWithCapacity:[selectedAssets count]];
     
-	for (NSDictionary* imageDict in selectImageInfo) {
+    PHImageManager *imageManager = [PHImageManager defaultManager];
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
+    
+    // See http://nshipster.com/phimagemanager/
+    
+    PHImageRequestOptions *imageRequestOptions = [[PHImageRequestOptions alloc] init];
+    imageRequestOptions.deliveryMode = PHImageRequestOptionsDeliveryModeOpportunistic;
+    imageRequestOptions.synchronous = NO;
+    imageRequestOptions.version = PHImageRequestOptionsVersionCurrent;
+    imageRequestOptions.resizeMode = PHImageRequestOptionsResizeModeFast;
+    
+	for (PHAsset *anAsset in selectedAssets) {
+        
+        [imageManager requestImageForAsset:anAsset
+                                targetSize:screenSize
+                               contentMode:PHImageContentModeAspectFill
+                                   options:imageRequestOptions
+                             resultHandler:<#^(UIImage *result, NSDictionary *info)resultHandler#>];
+        
         
         KTTask* taskToAdd = [KTTask taskFromPrototype:self.customTaskPrototype name:@"" commit:NO];
         [tasksToAdd addObject:taskToAdd];
         
         // Save task image later -- see notes below...
-        UIImage* image = [imageDict objectForKey:UIImagePickerControllerOriginalImage];
-        [imagesForTasksToAdd addObject:image];
+//        UIImage* image = [imageDict objectForKey:UIImagePickerControllerOriginalImage];
+//        [imagesForTasksToAdd addObject:image];
     }
     
     [self.routineEntity insertTasksAtBeginning:tasksToAdd commit:YES];

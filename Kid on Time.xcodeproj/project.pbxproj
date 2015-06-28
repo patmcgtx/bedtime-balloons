@@ -3325,7 +3325,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kid on Time/Kid on Time-Prefix.pch";
 				INFOPLIST_FILE = "Kid on Time/en.lproj/Kid on Time-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "fbffbdf3-f019-4da5-954e-61eeaf625573";
@@ -3351,7 +3351,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kid on Time/Kid on Time-Prefix.pch";
 				INFOPLIST_FILE = "Kid on Time/en.lproj/Kid on Time-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e01d4e54-73d2-4107-a7b7-2d689c758355";
