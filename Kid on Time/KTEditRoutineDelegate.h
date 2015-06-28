@@ -11,6 +11,6 @@
 @protocol KTEditRoutineDelegate <NSObject>
 
 -(void) didInsertTasksAtBeginningOfRoutine:(NSMutableOrderedSet*) insertedTasks;
--(void) didCancelEditingRoutine;
+-(void) didFinishEditingRoutine;
 
 @end

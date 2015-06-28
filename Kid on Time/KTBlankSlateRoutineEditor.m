@@ -35,6 +35,9 @@
 
 - (void)assetsPickerController:(GMImagePickerController *)picker didFinishPickingAssets:(NSArray *)assets {
     [self saveImagesAsTasks:assets];
+    if ( self.delegate ) {
+        [self.delegate didFinishEditingRoutine];
+    }
 }
 
 - (void)assetsPickerControllerDidCancel:(GMImagePickerController *)picker {
@@ -56,17 +59,12 @@
 -(void) saveImagesAsTasks:(NSArray *)selectedAssets {
     
     NSMutableOrderedSet* tasksToAdd = [NSMutableOrderedSet orderedSetWithCapacity:[selectedAssets count]];
-    
-    // To map tasks to images
-    NSMutableArray* imagesForTasksToAdd = [NSMutableArray arrayWithCapacity:[selectedAssets count]];
-    
     PHImageManager *imageManager = [PHImageManager defaultManager];
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     
     // See http://nshipster.com/phimagemanager/
-    
     PHImageRequestOptions *imageRequestOptions = [[PHImageRequestOptions alloc] init];
-    imageRequestOptions.deliveryMode = PHImageRequestOptionsDeliveryModeOpportunistic;
+    imageRequestOptions.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
     imageRequestOptions.synchronous = NO;
     imageRequestOptions.version = PHImageRequestOptionsVersionCurrent;
     imageRequestOptions.resizeMode = PHImageRequestOptionsResizeModeFast;
@@ -91,19 +89,6 @@
     
     [self.routineEntity insertTasksAtBeginning:tasksToAdd commit:YES];
     
-    // We have to save the task images ~after~ commiting to the db so that that filename
-    // comes out right.  The file name depends on the task's URIRepresentation which is
-    // only good if the task is committed to the db.
-    // Do this in the background since it can take a while (x several tasks)
-//    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-//    dispatch_async(queue, ^{
-//        int imageIndex = 0;
-//        for (KTTask* savedTask in tasksToAdd) {
-//            UIImage* imageToSave = (UIImage*) [imagesForTasksToAdd objectAtIndex:imageIndex++];
-//            [savedTask saveCustomImage:imageToSave incudingOriginal:YES];
-//        }
-//    });
-    
     if ( self.delegate ) {
         [self.delegate didInsertTasksAtBeginningOfRoutine:tasksToAdd];
     }
@@ -118,7 +103,7 @@
 
 -(void) cancel {
     if ( self.delegate ) {
-        [self.delegate didCancelEditingRoutine];
+        [self.delegate didFinishEditingRoutine];
     }
 }
 

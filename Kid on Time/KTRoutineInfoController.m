@@ -118,7 +118,7 @@
         self.cameraImagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
         self.cameraImagePicker.mediaTypes = [NSArray arrayWithObject:(NSString *)kUTTypeImage];
         self.cameraImagePicker.allowsEditing = YES;
-        self.cameraImagePicker.delegate = self.blankSlateEditor;
+//        self.cameraImagePicker.delegate = self.blankSlateEditor;
     }
     else {
         self.cameraImagePicker = nil;
@@ -469,7 +469,7 @@
 
 #pragma mark - KTEditRoutineDelegate
 
--(void) didCancelEditingRoutine {
+-(void) didFinishEditingRoutine {
     [[self presentedViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
