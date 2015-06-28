@@ -321,6 +321,18 @@
 		69946EF5198D67CC00CE7118 /* reward-45.png in Resources */ = {isa = PBXBuildFile; fileRef = 69946EAF198D67CC00CE7118 /* reward-45.png */; };
 		699CF8801915541700455F07 /* RTSIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 699CF87F1915541700455F07 /* RTSIndexPath.m */; };
 		699FD9CE15E1CF0600B54925 /* KTTaskPlus.m in Sources */ = {isa = PBXBuildFile; fileRef = 699FD9CD15E1CF0600B54925 /* KTTaskPlus.m */; };
+		69A2BF201B3F779D003B7F82 /* GMImagePicker.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69A2BF071B3F779D003B7F82 /* GMImagePicker.strings */; };
+		69A2BF211B3F779D003B7F82 /* GMAlbumsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A2BF0F1B3F779D003B7F82 /* GMAlbumsViewCell.m */; };
+		69A2BF221B3F779D003B7F82 /* GMAlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A2BF111B3F779D003B7F82 /* GMAlbumsViewController.m */; };
+		69A2BF231B3F779D003B7F82 /* GMEmptyFolder@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A2BF121B3F779D003B7F82 /* GMEmptyFolder@1x.png */; };
+		69A2BF241B3F779D003B7F82 /* GMEmptyFolder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A2BF131B3F779D003B7F82 /* GMEmptyFolder@2x.png */; };
+		69A2BF251B3F779D003B7F82 /* GMGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A2BF151B3F779D003B7F82 /* GMGridViewCell.m */; };
+		69A2BF261B3F779D003B7F82 /* GMGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A2BF171B3F779D003B7F82 /* GMGridViewController.m */; };
+		69A2BF271B3F779D003B7F82 /* GMImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A2BF191B3F779D003B7F82 /* GMImagePickerController.m */; };
+		69A2BF281B3F779D003B7F82 /* GMSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A2BF1A1B3F779D003B7F82 /* GMSelected.png */; };
+		69A2BF291B3F779D003B7F82 /* GMSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A2BF1B1B3F779D003B7F82 /* GMSelected@2x.png */; };
+		69A2BF2A1B3F779D003B7F82 /* GMVideoIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A2BF1C1B3F779D003B7F82 /* GMVideoIcon.png */; };
+		69A2BF2B1B3F779D003B7F82 /* GMVideoIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69A2BF1D1B3F779D003B7F82 /* GMVideoIcon@2x.png */; };
 		69A3CF9718A839150042E907 /* KTRoutineInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A3CF9618A839150042E907 /* KTRoutineInfoController.m */; };
 		69B688581972008B008D03C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69B6885A1972008B008D03C8 /* Localizable.strings */; };
 		69BF47A515D15EC100145D45 /* villain.png in Resources */ = {isa = PBXBuildFile; fileRef = 69BF47A415D15EC100145D45 /* villain.png */; };
@@ -330,7 +342,6 @@
 		69C1D53517B44784002FCBF8 /* help-villain.png in Resources */ = {isa = PBXBuildFile; fileRef = 69C1D53417B44784002FCBF8 /* help-villain.png */; };
 		69C1D53717B4493C002FCBF8 /* help-reward-screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 69C1D53617B4493C002FCBF8 /* help-reward-screen.png */; };
 		69DA018D189F265F00076DA7 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69DA018C189F265F00076DA7 /* Media.xcassets */; };
-		69DA58B414DF80A9001897E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DA58B314DF80A9001897E8 /* UIKit.framework */; };
 		69DA58B614DF80A9001897E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DA58B514DF80A9001897E8 /* Foundation.framework */; };
 		69DA58BC14DF80A9001897E8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69DA58BA14DF80A9001897E8 /* InfoPlist.strings */; };
 		69DA58BE14DF80A9001897E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DA58BD14DF80A9001897E8 /* main.m */; };
@@ -994,6 +1005,31 @@
 		699CF87F1915541700455F07 /* RTSIndexPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTSIndexPath.m; sourceTree = "<group>"; };
 		699FD9CC15E1CF0600B54925 /* KTTaskPlus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTTaskPlus.h; sourceTree = "<group>"; };
 		699FD9CD15E1CF0600B54925 /* KTTaskPlus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTTaskPlus.m; sourceTree = "<group>"; };
+		69A2BF081B3F779D003B7F82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/GMImagePicker.strings; sourceTree = "<group>"; };
+		69A2BF091B3F779D003B7F82 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/GMImagePicker.strings; sourceTree = "<group>"; };
+		69A2BF0A1B3F779D003B7F82 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/GMImagePicker.strings; sourceTree = "<group>"; };
+		69A2BF0B1B3F779D003B7F82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/GMImagePicker.strings; sourceTree = "<group>"; };
+		69A2BF0C1B3F779D003B7F82 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/GMImagePicker.strings; sourceTree = "<group>"; };
+		69A2BF0D1B3F779D003B7F82 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/GMImagePicker.strings; sourceTree = "<group>"; };
+		69A2BF0E1B3F779D003B7F82 /* GMAlbumsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMAlbumsViewCell.h; sourceTree = "<group>"; };
+		69A2BF0F1B3F779D003B7F82 /* GMAlbumsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMAlbumsViewCell.m; sourceTree = "<group>"; };
+		69A2BF101B3F779D003B7F82 /* GMAlbumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMAlbumsViewController.h; sourceTree = "<group>"; };
+		69A2BF111B3F779D003B7F82 /* GMAlbumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMAlbumsViewController.m; sourceTree = "<group>"; };
+		69A2BF121B3F779D003B7F82 /* GMEmptyFolder@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GMEmptyFolder@1x.png"; sourceTree = "<group>"; };
+		69A2BF131B3F779D003B7F82 /* GMEmptyFolder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GMEmptyFolder@2x.png"; sourceTree = "<group>"; };
+		69A2BF141B3F779D003B7F82 /* GMGridViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMGridViewCell.h; sourceTree = "<group>"; };
+		69A2BF151B3F779D003B7F82 /* GMGridViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMGridViewCell.m; sourceTree = "<group>"; };
+		69A2BF161B3F779D003B7F82 /* GMGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMGridViewController.h; sourceTree = "<group>"; };
+		69A2BF171B3F779D003B7F82 /* GMGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMGridViewController.m; sourceTree = "<group>"; };
+		69A2BF181B3F779D003B7F82 /* GMImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMImagePickerController.h; sourceTree = "<group>"; };
+		69A2BF191B3F779D003B7F82 /* GMImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMImagePickerController.m; sourceTree = "<group>"; };
+		69A2BF1A1B3F779D003B7F82 /* GMSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GMSelected.png; sourceTree = "<group>"; };
+		69A2BF1B1B3F779D003B7F82 /* GMSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GMSelected@2x.png"; sourceTree = "<group>"; };
+		69A2BF1C1B3F779D003B7F82 /* GMVideoIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GMVideoIcon.png; sourceTree = "<group>"; };
+		69A2BF1D1B3F779D003B7F82 /* GMVideoIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GMVideoIcon@2x.png"; sourceTree = "<group>"; };
+		69A2BF1E1B3F779D003B7F82 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/GMImagePicker.strings; sourceTree = "<group>"; };
+		69A2BF1F1B3F779D003B7F82 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/GMImagePicker.strings; sourceTree = "<group>"; };
+		69A2BF2C1B3F7883003B7F82 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		69A3CF9518A839150042E907 /* KTRoutineInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTRoutineInfoController.h; sourceTree = "<group>"; };
 		69A3CF9618A839150042E907 /* KTRoutineInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTRoutineInfoController.m; sourceTree = "<group>"; };
 		69BF47A415D15EC100145D45 /* villain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = villain.png; sourceTree = "<group>"; };
@@ -1199,7 +1235,6 @@
 				6904BB161567E88700719CF4 /* OpenGLES.framework in Frameworks */,
 				6904BB141567E87F00719CF4 /* QuartzCore.framework in Frameworks */,
 				693AE77214E86885007FE8AE /* CoreData.framework in Frameworks */,
-				69DA58B414DF80A9001897E8 /* UIKit.framework in Frameworks */,
 				69DA58B614DF80A9001897E8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1872,6 +1907,7 @@
 				69FB4A0A194508EA003755D7 /* ELCImagePicker */,
 				698AF44218CC01B00067A7F2 /* NMRangeSlider */,
 				69FAFBAF189367AB00034AF4 /* DraggableCollectionView */,
+				69A2BF061B3F779D003B7F82 /* GMImagePicker */,
 			);
 			name = libs;
 			sourceTree = "<group>";
@@ -2000,6 +2036,30 @@
 			name = rewards;
 			sourceTree = "<group>";
 		};
+		69A2BF061B3F779D003B7F82 /* GMImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				69A2BF071B3F779D003B7F82 /* GMImagePicker.strings */,
+				69A2BF0E1B3F779D003B7F82 /* GMAlbumsViewCell.h */,
+				69A2BF0F1B3F779D003B7F82 /* GMAlbumsViewCell.m */,
+				69A2BF101B3F779D003B7F82 /* GMAlbumsViewController.h */,
+				69A2BF111B3F779D003B7F82 /* GMAlbumsViewController.m */,
+				69A2BF121B3F779D003B7F82 /* GMEmptyFolder@1x.png */,
+				69A2BF131B3F779D003B7F82 /* GMEmptyFolder@2x.png */,
+				69A2BF141B3F779D003B7F82 /* GMGridViewCell.h */,
+				69A2BF151B3F779D003B7F82 /* GMGridViewCell.m */,
+				69A2BF161B3F779D003B7F82 /* GMGridViewController.h */,
+				69A2BF171B3F779D003B7F82 /* GMGridViewController.m */,
+				69A2BF181B3F779D003B7F82 /* GMImagePickerController.h */,
+				69A2BF191B3F779D003B7F82 /* GMImagePickerController.m */,
+				69A2BF1A1B3F779D003B7F82 /* GMSelected.png */,
+				69A2BF1B1B3F779D003B7F82 /* GMSelected@2x.png */,
+				69A2BF1C1B3F779D003B7F82 /* GMVideoIcon.png */,
+				69A2BF1D1B3F779D003B7F82 /* GMVideoIcon@2x.png */,
+			);
+			path = GMImagePicker;
+			sourceTree = "<group>";
+		};
 		69A3CF9418A838BA0042E907 /* Routine Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -2051,6 +2111,7 @@
 		69DA58B214DF80A9001897E8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				69A2BF2C1B3F7883003B7F82 /* Photos.framework */,
 				6922B37D197444B30022BC0A /* CoreText.framework */,
 				69D3512517939DC5000883ED /* libsqlite3.dylib */,
 				699235CB17652A0400E49666 /* AssetsLibrary.framework */,
@@ -2542,6 +2603,11 @@
 				en,
 				de,
 				Base,
+				ca,
+				es,
+				fr,
+				it,
+				pt,
 			);
 			mainGroup = 69DA58A414DF80A9001897E8;
 			productRefGroup = 69DA58B014DF80A9001897E8 /* Products */;
@@ -2580,7 +2646,9 @@
 				69F870D0199819E8001938D7 /* help-routine-example.png in Resources */,
 				693671C3197384A800EACB1D /* close.png in Resources */,
 				69FB4A2919450903003755D7 /* ELCAssetPicker.xib in Resources */,
+				69A2BF2B1B3F779D003B7F82 /* GMVideoIcon@2x.png in Resources */,
 				69F8276E188CAF00004D3B7C /* color-available3@2x.png in Resources */,
+				69A2BF231B3F779D003B7F82 /* GMEmptyFolder@1x.png in Resources */,
 				69946EEE198D67CC00CE7118 /* reward-42-hd.png in Resources */,
 				69946EC6198D67CC00CE7118 /* reward-22-hd.png in Resources */,
 				69946EC5198D67CC00CE7118 /* reward-21.png in Resources */,
@@ -2653,7 +2721,9 @@
 				69F82786188CAF00004D3B7C /* sliderMaxTrack@2x.png in Resources */,
 				69946EF4198D67CC00CE7118 /* reward-45-hd.png in Resources */,
 				69F82793188CAF00004D3B7C /* tab_sel.png in Resources */,
+				69A2BF281B3F779D003B7F82 /* GMSelected.png in Resources */,
 				69946ED9198D67CC00CE7118 /* reward-31.png in Resources */,
+				69A2BF2A1B3F779D003B7F82 /* GMVideoIcon.png in Resources */,
 				69F8277A188CAF00004D3B7C /* pink-eye@2x.png in Resources */,
 				69BF47A515D15EC100145D45 /* villain.png in Resources */,
 				69946E5A198D5FEB00CE7118 /* reward-03-hd.png in Resources */,
@@ -2674,6 +2744,7 @@
 				69946EEA198D67CC00CE7118 /* reward-40-hd.png in Resources */,
 				69F8272B188CAE72004D3B7C /* switches.png in Resources */,
 				691C47A115E31CE800121C60 /* timer-background-hd.png in Resources */,
+				69A2BF241B3F779D003B7F82 /* GMEmptyFolder@2x.png in Resources */,
 				69F82775188CAF00004D3B7C /* pageControl-dot-selected@2x.png in Resources */,
 				69F8276C188CAF00004D3B7C /* color-available1@2x.png in Resources */,
 				69F82780188CAF00004D3B7C /* progressTrack@2x.png in Resources */,
@@ -2719,6 +2790,7 @@
 				69946E59198D5FEB00CE7118 /* reward-02.png in Resources */,
 				69782BA4171A06D300E9BBA4 /* balloon-pop-big.png in Resources */,
 				69946EC3198D67CC00CE7118 /* reward-20.png in Resources */,
+				69A2BF291B3F779D003B7F82 /* GMSelected@2x.png in Resources */,
 				69FB26A5196738A9000659AF /* help-setup.html in Resources */,
 				69946EBC198D67CC00CE7118 /* reward-17-hd.png in Resources */,
 				691D62CA1748411A0013F433 /* countdown.caf in Resources */,
@@ -2746,6 +2818,7 @@
 				69C1D52F17B43C75002FCBF8 /* help-balloons.png in Resources */,
 				69946EF1198D67CC00CE7118 /* reward-43.png in Resources */,
 				69946EC9198D67CC00CE7118 /* reward-23.png in Resources */,
+				69A2BF201B3F779D003B7F82 /* GMImagePicker.strings in Resources */,
 				69946E69198D5FEB00CE7118 /* reward-10.png in Resources */,
 				69946EF2198D67CC00CE7118 /* reward-44-hd.png in Resources */,
 				69C1D53117B43EBF002FCBF8 /* help-steps.png in Resources */,
@@ -2817,6 +2890,7 @@
 				6922B378197441740022BC0A /* ray2.c in Sources */,
 				6922B30A197441610022BC0A /* CCRenderTexture.m in Sources */,
 				69FB4A2319450903003755D7 /* ELCAlbumPickerController.m in Sources */,
+				69A2BF221B3F779D003B7F82 /* GMAlbumsViewController.m in Sources */,
 				6922B301197441610022BC0A /* CCNode.m in Sources */,
 				69F827B1188CAFBA004D3B7C /* ADVPercentProgressBar.m in Sources */,
 				6922B319197441610022BC0A /* CCTMXObjectGroup.m in Sources */,
@@ -2857,6 +2931,7 @@
 				6922B2FC197441610022BC0A /* CCLayer.m in Sources */,
 				694F411015154611006E28C1 /* KTTaskBasePlus.m in Sources */,
 				69FB4A2419450903003755D7 /* ELCAsset.m in Sources */,
+				69A2BF211B3F779D003B7F82 /* GMAlbumsViewCell.m in Sources */,
 				6922B2E6197441610022BC0A /* CCActionProgressTimer.m in Sources */,
 				6922B323197441610022BC0A /* CCTouchDispatcher.m in Sources */,
 				6922B310197441610022BC0A /* CCSpriteBatchNode.m in Sources */,
@@ -2899,8 +2974,10 @@
 				6922B2EF197441610022BC0A /* ccDeprecated.m in Sources */,
 				693AF7E71928FF22009340CC /* KTNewRoutineWizardPage1Controller.m in Sources */,
 				6922B30D197441610022BC0A /* CCShaderCache.m in Sources */,
+				69A2BF261B3F779D003B7F82 /* GMGridViewController.m in Sources */,
 				6922B334197441610022BC0A /* ZipUtils.m in Sources */,
 				6922B37B197441740022BC0A /* vec3.c in Sources */,
+				69A2BF251B3F779D003B7F82 /* GMGridViewCell.m in Sources */,
 				69FB4A3119450C9F003755D7 /* KTBlankSlateRoutineCreator.m in Sources */,
 				6922B2EA197441610022BC0A /* CCAnimationCache.m in Sources */,
 				691F132F1971E43E009F77CD /* KTAddRoutineCell.m in Sources */,
@@ -2918,6 +2995,7 @@
 				6922B32F197441610022BC0A /* CCVertex.m in Sources */,
 				691FA0761996EDB300E83189 /* KTTheme.m in Sources */,
 				69914F0815AA221600F66890 /* RTSCorner.m in Sources */,
+				69A2BF271B3F779D003B7F82 /* GMImagePickerController.m in Sources */,
 				6956547015AE15B100A39EC3 /* KTCocos2dLabel.m in Sources */,
 				6956547815AE36A600A39EC3 /* KTPointCount.m in Sources */,
 				69FAFBBF189367AB00034AF4 /* UICollectionView+Draggable.m in Sources */,
@@ -3038,6 +3116,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		69A2BF071B3F779D003B7F82 /* GMImagePicker.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69A2BF081B3F779D003B7F82 /* Base */,
+				69A2BF091B3F779D003B7F82 /* ca */,
+				69A2BF0A1B3F779D003B7F82 /* de */,
+				69A2BF0B1B3F779D003B7F82 /* en */,
+				69A2BF0C1B3F779D003B7F82 /* es */,
+				69A2BF0D1B3F779D003B7F82 /* fr */,
+				69A2BF1E1B3F779D003B7F82 /* it */,
+				69A2BF1F1B3F779D003B7F82 /* pt */,
+			);
+			name = GMImagePicker.strings;
+			sourceTree = "<group>";
+		};
 		69B688561972007E008D03C8 /* Kid on Time-Info.plist */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -3119,6 +3212,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -3178,6 +3272,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;

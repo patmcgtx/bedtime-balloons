@@ -10,6 +10,7 @@
 #import "ELCImagePickerController.h"
 #import "KTEditRoutineDelegate.h"
 #import "KTRoutine.h"
+#import "GMImagePickerController.h"
 
 @interface KTBlankSlateRoutineEditor : NSObject <ELCImagePickerControllerDelegate, UIImagePickerControllerDelegate>
 

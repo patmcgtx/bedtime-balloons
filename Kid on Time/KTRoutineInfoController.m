@@ -25,6 +25,7 @@
 #import <MobileCoreServices/UTCoreTypes.h>
 #import "KTAddTaskCell.h"
 #import "KTPhotoAccessChecker.h"
+#import "GMImagePickerController.h"
 
 #define KT_ROUTINE_PICK_TASKS NSLocalizedString(@"label.tasks.pick", nil)
 #define KT_ROUTINE_TAKE_PHOTO NSLocalizedString(@"label.tasks.camera", nil)
@@ -520,10 +521,13 @@
 }
 
 -(void) pickPhotos {
-    if ( [KTPhotoAccessChecker vetPhotoAccess] ) {
-        self.blankSlateEditor.routineEntity = self.routineEntity;
-        [self presentViewController:self.multiImagePicker animated:YES completion:nil];
-    }
+//    if ( [KTPhotoAccessChecker vetPhotoAccess] ) {
+//        self.blankSlateEditor.routineEntity = self.routineEntity;
+//        [self presentViewController:self.multiImagePicker animated:YES completion:nil];
+//    }
+    GMImagePickerController *picker = [[GMImagePickerController alloc] init];
+//    picker.delegate = self;
+    [self presentViewController:picker animated:YES completion:nil];
 }
 
 -(void) renumberVisibleTasks {
