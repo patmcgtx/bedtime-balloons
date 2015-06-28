@@ -69,4 +69,14 @@
     return retval;
 }
 
+-(KTTask*) getTaskByObjectId:(NSManagedObjectID*) objectId {
+    
+    KTTask *retval = nil;
+    
+    // TODO Error hanlding
+    retval = [self.managedObjectContext existingObjectWithID:objectId error:nil];
+    
+    return retval;
+}
+
 @end

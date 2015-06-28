@@ -73,19 +73,20 @@
     
 	for (PHAsset *anAsset in selectedAssets) {
         
+        KTTask* taskToAdd = [KTTask taskFromPrototype:self.customTaskPrototype name:@"" commit:YES];
+        NSManagedObjectID *addedTaskObjectId = [taskToAdd objectID];
+        [tasksToAdd addObject:taskToAdd];
+        
+        // Kick off an async download of the image for iCloud
         [imageManager requestImageForAsset:anAsset
                                 targetSize:screenSize
                                contentMode:PHImageContentModeAspectFill
                                    options:imageRequestOptions
-                             resultHandler:<#^(UIImage *result, NSDictionary *info)resultHandler#>];
-        
-        
-        KTTask* taskToAdd = [KTTask taskFromPrototype:self.customTaskPrototype name:@"" commit:NO];
-        [tasksToAdd addObject:taskToAdd];
-        
-        // Save task image later -- see notes below...
-//        UIImage* image = [imageDict objectForKey:UIImagePickerControllerOriginalImage];
-//        [imagesForTasksToAdd addObject:image];
+                             resultHandler:^(UIImage *result, NSDictionary *info) {
+                                 // The download completed
+                                 KTTask *taskForImage = [[[KTDataAccess sharedInstance] taskQueries] getTaskByObjectId:addedTaskObjectId];
+                                 [taskForImage saveCustomImage:result incudingOriginal:YES];
+                             }];
     }
     
     [self.routineEntity insertTasksAtBeginning:tasksToAdd commit:YES];
@@ -94,14 +95,14 @@
     // comes out right.  The file name depends on the task's URIRepresentation which is
     // only good if the task is committed to the db.
     // Do this in the background since it can take a while (x several tasks)
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(queue, ^{
-        int imageIndex = 0;
-        for (KTTask* savedTask in tasksToAdd) {
-            UIImage* imageToSave = (UIImage*) [imagesForTasksToAdd objectAtIndex:imageIndex++];
-            [savedTask saveCustomImage:imageToSave incudingOriginal:YES];
-        }
-    });
+//    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//    dispatch_async(queue, ^{
+//        int imageIndex = 0;
+//        for (KTTask* savedTask in tasksToAdd) {
+//            UIImage* imageToSave = (UIImage*) [imagesForTasksToAdd objectAtIndex:imageIndex++];
+//            [savedTask saveCustomImage:imageToSave incudingOriginal:YES];
+//        }
+//    });
     
     if ( self.delegate ) {
         [self.delegate didInsertTasksAtBeginningOfRoutine:tasksToAdd];
