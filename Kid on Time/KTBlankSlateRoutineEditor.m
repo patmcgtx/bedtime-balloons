@@ -65,9 +65,10 @@
     // See http://nshipster.com/phimagemanager/
     PHImageRequestOptions *imageRequestOptions = [[PHImageRequestOptions alloc] init];
     imageRequestOptions.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
-    imageRequestOptions.synchronous = NO;
     imageRequestOptions.version = PHImageRequestOptionsVersionCurrent;
     imageRequestOptions.resizeMode = PHImageRequestOptionsResizeModeFast;
+    imageRequestOptions.synchronous = NO;
+    imageRequestOptions.networkAccessAllowed = YES;
     
 	for (PHAsset *anAsset in selectedAssets) {
         
@@ -78,7 +79,7 @@
         // Kick off an async download of the image for iCloud
         [imageManager requestImageForAsset:anAsset
                                 targetSize:screenSize
-                               contentMode:PHImageContentModeAspectFill
+                               contentMode:PHImageContentModeAspectFit
                                    options:imageRequestOptions
                              resultHandler:^(UIImage *result, NSDictionary *info) {
                                  // The download completed
