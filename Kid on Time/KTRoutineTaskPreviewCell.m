@@ -52,9 +52,15 @@
     
     // When my task says its image changed, then refresh my image
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(refreshTaskImage:)
                                                  name:KTNotificationTaskImageDidChange
+                                               object:self.taskEntity];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(refreshTaskPlaceholder:)
+                                                 name:KTNotificationTaskPlaceholderImageDidChange
                                                object:self.taskEntity];
 }
 
@@ -66,6 +72,14 @@
     // for several seconds, if not longer.
     dispatch_async(dispatch_get_main_queue(), ^{
         self.taskImageView.image = [self.taskEntity imageWithSize:RTSImageSizeSmall];
+        [self hideLoadingImage];
+    });
+}
+
+-(void) refreshTaskPlaceholder:(NSNotification*) notification {
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.taskImageView.image = [self.taskEntity placeholderImage];
         [self hideLoadingImage];
     });
 }

@@ -209,6 +209,10 @@
     }
 }
 
+-(void) refreshTaskPlaceholder:(NSNotification*) notification {
+    // TODO: KIDSCHED-519
+}
+
 #pragma mark - Segues
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

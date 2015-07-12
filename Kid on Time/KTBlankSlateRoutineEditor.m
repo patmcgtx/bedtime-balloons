@@ -77,15 +77,32 @@
         [tasksToAdd addObject:taskToAdd];
         
         // Kick off an async download of the image for iCloud
-        [imageManager requestImageForAsset:anAsset
-                                targetSize:screenSize
-                               contentMode:PHImageContentModeAspectFit
-                                   options:imageRequestOptions
-                             resultHandler:^(UIImage *result, NSDictionary *info) {
-                                 // The download completed
-                                 KTTask *taskForImage = [[[KTDataAccess sharedInstance] taskQueries] getTaskByObjectId:addedTaskObjectId];
-                                 [taskForImage saveCustomImage:result incudingOriginal:YES];
-                             }];
+        [imageManager requestImageDataForAsset:anAsset options:imageRequestOptions resultHandler:^(NSData *imageData, NSString *dataUTI, UIImageOrientation orientation, NSDictionary *info) {
+            if (imageData) {
+                
+                KTTask *taskForImage = [[[KTDataAccess sharedInstance] taskQueries] getTaskByObjectId:addedTaskObjectId];
+                UIImage *downloadedImage = [UIImage imageWithData:imageData];
+                
+                BOOL isDegraded = [[info valueForKey:@"PHImageResultIsDegradedKey"] boolValue];
+                
+                if (isDegraded) {
+                    [taskForImage savePlaceholderImage:downloadedImage];
+                }
+                else {
+                    [taskForImage saveCustomImage:downloadedImage incudingOriginal:YES];
+                }
+            }
+        }];
+        
+//        [imageManager requestImageForAsset:anAsset
+//                                targetSize:screenSize
+//                               contentMode:PHImageContentModeAspectFit
+//                                   options:imageRequestOptions
+//                             resultHandler:^(UIImage *result, NSDictionary *info) {
+//                                 // The download completed
+//                                 KTTask *taskForImage = [[[KTDataAccess sharedInstance] taskQueries] getTaskByObjectId:addedTaskObjectId];
+//                                 [taskForImage saveCustomImage:result incudingOriginal:YES];
+//                             }];
     }
     
     [self.routineEntity insertTasksAtBeginning:tasksToAdd commit:YES];
