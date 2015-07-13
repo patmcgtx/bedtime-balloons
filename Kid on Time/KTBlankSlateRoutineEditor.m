@@ -78,19 +78,30 @@
         
         // Kick off an async download of the image for iCloud
         [imageManager requestImageDataForAsset:anAsset options:imageRequestOptions resultHandler:^(NSData *imageData, NSString *dataUTI, UIImageOrientation orientation, NSDictionary *info) {
+            
+            KTTask *taskForImage = [[[KTDataAccess sharedInstance] taskQueries] getTaskByObjectId:addedTaskObjectId];
+            
             if (imageData) {
                 
-                KTTask *taskForImage = [[[KTDataAccess sharedInstance] taskQueries] getTaskByObjectId:addedTaskObjectId];
                 UIImage *downloadedImage = [UIImage imageWithData:imageData];
                 
-                BOOL isDegraded = [[info valueForKey:@"PHImageResultIsDegradedKey"] boolValue];
-                
-                if (isDegraded) {
-                    [taskForImage savePlaceholderImage:downloadedImage];
-                }
-                else {
+//                BOOL isDegraded = [[info valueForKey:@"PHImageResultIsDegradedKey"] boolValue];
+//                
+//                if (isDegraded) {
+//                    [taskForImage savePlaceholderImage:downloadedImage];
+//                }
+//                else {
                     [taskForImage saveCustomImage:downloadedImage incudingOriginal:YES];
+//                }
+            }
+            else {
+                id downloadError = [info valueForKey:@"PHImageErrorKey"];
+                
+                if (downloadError) {
+                    [[NSNotificationCenter defaultCenter] postNotificationName:KTNotificationTaskImageDownloadFailed
+                                                                        object:taskForImage];
                 }
+                
             }
         }];
         

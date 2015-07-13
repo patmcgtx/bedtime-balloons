@@ -15,6 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *taskImageView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIImageView *taskStatusIndicator;
 
 @end
 
@@ -33,7 +34,9 @@
     [super prepareForReuse];
     
     self.taskImageView.image = nil;
-    [self showLoadingImage];
+//    [self showLoadingImage];
+//    [self hideProcessingImage];
+    [self showImageDownloadInProgress];
 }
 
 -(void) updateForTask:(KTTask *)taskEntity {
@@ -42,10 +45,10 @@
     
     if ( taskImage ) {
         self.taskImageView.image = [taskEntity imageWithSize:RTSImageSizeSmall];
-        [self hideLoadingImage];
+        [self hideProcessingImage];
     }
     else {
-        [self showLoadingImage];
+//        [self showProcessingImage];
     }
 
     self.taskEntity = taskEntity;
@@ -58,9 +61,14 @@
                                                  name:KTNotificationTaskImageDidChange
                                                object:self.taskEntity];
 
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(refreshTaskPlaceholder:)
+//                                                 name:KTNotificationTaskPlaceholderImageDidChange
+//                                               object:self.taskEntity];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(refreshTaskPlaceholder:)
-                                                 name:KTNotificationTaskPlaceholderImageDidChange
+                                             selector:@selector(imageDownloadFailed:)
+                                                 name:KTNotificationTaskImageDownloadFailed
                                                object:self.taskEntity];
 }
 
@@ -72,30 +80,65 @@
     // for several seconds, if not longer.
     dispatch_async(dispatch_get_main_queue(), ^{
         self.taskImageView.image = [self.taskEntity imageWithSize:RTSImageSizeSmall];
-        [self hideLoadingImage];
+        [self hideProcessingImage];
     });
 }
 
--(void) refreshTaskPlaceholder:(NSNotification*) notification {
+-(void) imageDownloadFailed:(NSNotification*) notification {
     
+    // Have to do this on the main thread or it does not update
+    // for several seconds, if not longer.
     dispatch_async(dispatch_get_main_queue(), ^{
-        self.taskImageView.image = [self.taskEntity placeholderImage];
-        [self hideLoadingImage];
+        [self showImageDownloadFailed];
+//        self.taskImageView.image = [UIImage imageNamed:@"cloud-storm"];
+//        [self hideLoadingImage];
     });
 }
+
+//-(void) refreshTaskPlaceholder:(NSNotification*) notification {
+//    
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        self.taskImageView.image = [self.taskEntity placeholderImage];
+//        [self hideLoadingImage];
+//    });
+//}
+
+#pragma mark - Properties
+
+-(void)setIsWaitingForDownload:(BOOL)isWaitingForDownload {
+    
+}
+
 
 #pragma mark - Internal helpers
 
--(void) hideLoadingImage {
+-(void) hideProcessingImage {
     self.taskImageView.hidden = NO;
     self.activityIndicator.hidden = YES;
     [self.activityIndicator stopAnimating];
 }
 
--(void) showLoadingImage {
+-(void) showProcessingImage {
     self.taskImageView.hidden = YES;
     [self.activityIndicator startAnimating];
     self.activityIndicator.hidden = NO;
 }
+
+-(void) showImageDownloadInProgress {
+    self.taskImageView.hidden = YES;
+    self.taskImageView.image = nil;
+    self.activityIndicator.hidden = NO;
+    [self.activityIndicator startAnimating];
+    self.taskStatusIndicator.image = [UIImage imageNamed:@"cloud-download"];
+}
+
+-(void) showImageDownloadFailed {
+    self.taskImageView.hidden = YES;
+    self.taskImageView.image = nil;
+    self.activityIndicator.hidden = YES;
+    [self.activityIndicator stopAnimating];
+    self.taskStatusIndicator.image = [UIImage imageNamed:@"cloud-storm"];
+}
+
 
 @end

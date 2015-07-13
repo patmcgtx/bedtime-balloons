@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *taskTimeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIImageView *taskStatusIndicator;
 
 @property (strong, nonatomic) UILongPressGestureRecognizer* gestureRecognizer;
 
@@ -49,6 +50,8 @@
     self.taskNameLabel.text = @"";
     self.taskTimeLabel.text = @"";
     self.deleteButton.hidden = YES;
+    
+    [self showImageDownloadInProgress];
 }
 
 -(void) prepareForTask:(KTTask*) updatedTask isEditing:(BOOL) isEditing isNew:(BOOL) isNew {
@@ -66,11 +69,11 @@
 
     UIImage* taskImage = [updatedTask imageWithSize:RTSImageSizeMedium];
     if ( taskImage ) {
-        self.taskPreviewImage.image = [updatedTask imageWithSize:RTSImageSizeMedium];
-        [self hideLoadingImage];
+        self.taskPreviewImage.image = taskImage;
+        [self hideProcessingImage];
     }
     else {
-        [self showLoadingImage];
+//        [self showLoadingImage];
     }
     
     self.isEditing = isEditing;
@@ -93,9 +96,14 @@
                                                object:self.taskEntity];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(refreshTaskPlaceholder:)
-                                                 name:KTNotificationTaskPlaceholderImageDidChange
+                                             selector:@selector(imageDownloadFailed:)
+                                                 name:KTNotificationTaskImageDownloadFailed
                                                object:self.taskEntity];
+
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(refreshTaskPlaceholder:)
+//                                                 name:KTNotificationTaskPlaceholderImageDidChange
+//                                               object:self.taskEntity];
 }
 
 -(void) updateLabelForCurrentPosition {
@@ -113,17 +121,30 @@
     // for several seconds, if not longer.
     dispatch_async(dispatch_get_main_queue(), ^{
         self.taskPreviewImage.image = [self.taskEntity imageWithSize:RTSImageSizeMedium];
-        [self hideLoadingImage];
+        [self hideProcessingImage];
     });
 }
 
--(void) refreshTaskPlaceholder:(NSNotification*) notification {
+-(void) imageDownloadFailed:(NSNotification*) notification {
     
+    // Have to do this on the main thread or it does not update
+    // for several seconds, if not longer.
     dispatch_async(dispatch_get_main_queue(), ^{
-        self.taskPreviewImage.image = [self.taskEntity placeholderImage];
-        [self hideLoadingImage];
+//        [self hideProcessingImage];
+//        self.taskStatusIndicator.hidden = NO;
+        [self showImageDownloadFailed];
+//        self.taskPreviewImage.image = [UIImage imageNamed:@"cloud-storm"];
+//        [self hideLoadingImage];
     });
 }
+
+//-(void) refreshTaskPlaceholder:(NSNotification*) notification {
+//    
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        self.taskPreviewImage.image = [self.taskEntity placeholderImage];
+//        [self hideLoadingImage];
+//    });
+//}
 
 #pragma mark - Actions
 
@@ -209,16 +230,32 @@
 
 #pragma mark - Internal helpers
 
--(void) hideLoadingImage {
+-(void) hideProcessingImage {
     self.taskPreviewImage.hidden = NO;
     self.activityIndicator.hidden = YES;
     [self.activityIndicator stopAnimating];
 }
 
--(void) showLoadingImage {
+-(void) showProcessingImage {
     self.taskPreviewImage.hidden = YES;
     [self.activityIndicator startAnimating];
     self.activityIndicator.hidden = NO;
+}
+
+-(void) showImageDownloadInProgress {
+    self.taskPreviewImage.hidden = YES;
+    self.taskPreviewImage.image = nil;
+    self.activityIndicator.hidden = NO;
+    [self.activityIndicator startAnimating];
+    self.taskStatusIndicator.image = [UIImage imageNamed:@"cloud-download"];
+}
+
+-(void) showImageDownloadFailed {
+    self.taskPreviewImage.hidden = YES;
+    self.taskPreviewImage.image = nil;
+    self.activityIndicator.hidden = YES;
+    [self.activityIndicator stopAnimating];
+    self.taskStatusIndicator.image = [UIImage imageNamed:@"cloud-storm"];
 }
 
 @end

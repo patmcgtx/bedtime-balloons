@@ -106,12 +106,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Kid on Time/KTBlankSlateRoutineEditor.m"
-            timestampString = "458435237.879916"
+            timestampString = "458443995.335029"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "-saveImagesAsTasks:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Kid on Time/KTBlankSlateRoutineEditor.m"
+            timestampString = "458443995.335029"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "-saveImagesAsTasks:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[KTBlankSlateRoutineEditor saveImagesAsTasks:]"
+                  moduleName = "BedtimeBalloons"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/patmcg/Projects/bedtime-balloons/Kid%20on%20Time/KTBlankSlateRoutineEditor.m"
+                  timestampString = "458443116.609146"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "896">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__47-[KTBlankSlateRoutineEditor saveImagesAsTasks:]_block_invoke"
+                  moduleName = "BedtimeBalloons"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/patmcg/Projects/bedtime-balloons/Kid%20on%20Time/KTBlankSlateRoutineEditor.m"
+                  timestampString = "458443116.609386"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "116">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Kid on Time/KTTaskCell.m"
+            timestampString = "458447464.240287"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "-refreshTaskImage:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
