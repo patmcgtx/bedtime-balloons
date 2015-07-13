@@ -77,6 +77,9 @@
         [tasksToAdd addObject:taskToAdd];
         
         // Kick off an async download of the image for iCloud
+//        [[NSNotificationCenter defaultCenter] postNotificationName:KTNotificationTaskImageDownloadStarted
+//                                                            object:taskToAdd];
+        
         [imageManager requestImageDataForAsset:anAsset options:imageRequestOptions resultHandler:^(NSData *imageData, NSString *dataUTI, UIImageOrientation orientation, NSDictionary *info) {
             
             KTTask *taskForImage = [[[KTDataAccess sharedInstance] taskQueries] getTaskByObjectId:addedTaskObjectId];

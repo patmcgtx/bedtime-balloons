@@ -47,11 +47,14 @@
     self.taskEntity = nil;
     self.toolbar = nil;
     self.taskPreviewImage.image = nil;
+    self.taskPreviewImage.hidden = YES;
     self.taskNameLabel.text = @"";
     self.taskTimeLabel.text = @"";
     self.deleteButton.hidden = YES;
+    self.activityIndicator.hidden = YES;
+    [self.activityIndicator stopAnimating];
     
-    [self showImageDownloadInProgress];
+//    [self showImageDownloadInProgress];
 }
 
 -(void) prepareForTask:(KTTask*) updatedTask isEditing:(BOOL) isEditing isNew:(BOOL) isNew {
@@ -67,13 +70,19 @@
         self.taskTimeLabel.hidden = YES;
     }
 
+    
     UIImage* taskImage = [updatedTask imageWithSize:RTSImageSizeMedium];
+    
     if ( taskImage ) {
         self.taskPreviewImage.image = taskImage;
-        [self hideProcessingImage];
+        self.taskPreviewImage.hidden = NO;
+//        [self hideProcessingImage];
     }
     else {
 //        [self showLoadingImage];
+        if (updatedTask.isCustomTask) {
+            [self showImageDownloadInProgress];
+        }
     }
     
     self.isEditing = isEditing;
@@ -94,6 +103,11 @@
                                              selector:@selector(refreshTaskImage:)
                                                  name:KTNotificationTaskImageDidChange
                                                object:self.taskEntity];
+    
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(imageDownloadStarted:)
+//                                                 name:KTNotificationTaskImageDownloadStarted
+//                                               object:self.taskEntity];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(imageDownloadFailed:)
@@ -121,7 +135,10 @@
     // for several seconds, if not longer.
     dispatch_async(dispatch_get_main_queue(), ^{
         self.taskPreviewImage.image = [self.taskEntity imageWithSize:RTSImageSizeMedium];
+        self.taskPreviewImage.hidden = NO;
         [self hideProcessingImage];
+        self.taskStatusIndicator.image = nil;
+        self.taskStatusIndicator.hidden = YES;
     });
 }
 
@@ -137,6 +154,15 @@
 //        [self hideLoadingImage];
     });
 }
+
+
+-(void) imageDownloadStarted:(NSNotification*) notification {
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self showImageDownloadInProgress];
+    });
+}
+
 
 //-(void) refreshTaskPlaceholder:(NSNotification*) notification {
 //    
@@ -238,6 +264,7 @@
 
 -(void) showProcessingImage {
     self.taskPreviewImage.hidden = YES;
+    self.taskPreviewImage.image = nil;
     [self.activityIndicator startAnimating];
     self.activityIndicator.hidden = NO;
 }
@@ -248,6 +275,7 @@
     self.activityIndicator.hidden = NO;
     [self.activityIndicator startAnimating];
     self.taskStatusIndicator.image = [UIImage imageNamed:@"cloud-download"];
+    self.taskStatusIndicator.hidden = NO;
 }
 
 -(void) showImageDownloadFailed {
@@ -256,6 +284,7 @@
     self.activityIndicator.hidden = YES;
     [self.activityIndicator stopAnimating];
     self.taskStatusIndicator.image = [UIImage imageNamed:@"cloud-storm"];
+    self.taskStatusIndicator.hidden = NO;
 }
 
 @end

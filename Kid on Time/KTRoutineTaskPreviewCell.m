@@ -36,7 +36,7 @@
     self.taskImageView.image = nil;
 //    [self showLoadingImage];
 //    [self hideProcessingImage];
-    [self showImageDownloadInProgress];
+//    [self showImageDownloadInProgress];
 }
 
 -(void) updateForTask:(KTTask *)taskEntity {
@@ -44,7 +44,7 @@
     UIImage* taskImage = [taskEntity imageWithSize:RTSImageSizeSmall];
     
     if ( taskImage ) {
-        self.taskImageView.image = [taskEntity imageWithSize:RTSImageSizeSmall];
+        self.taskImageView.image = taskImage;
         [self hideProcessingImage];
     }
     else {
