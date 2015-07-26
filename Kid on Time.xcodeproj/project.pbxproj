@@ -37,11 +37,6 @@
 		691F132C1971BBAB009F77CD /* KTErrorReporterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 691F132B1971BBAB009F77CD /* KTErrorReporterController.m */; };
 		691F132F1971E43E009F77CD /* KTAddRoutineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 691F132E1971E43E009F77CD /* KTAddRoutineCell.m */; };
 		691F13321971E572009F77CD /* KTAddTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 691F13311971E572009F77CD /* KTAddTaskCell.m */; };
-		691FA0701996EDB300E83189 /* KTRoutine.m in Sources */ = {isa = PBXBuildFile; fileRef = 691FA06F1996EDB300E83189 /* KTRoutine.m */; };
-		691FA0731996EDB300E83189 /* KTTaskBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 691FA0721996EDB300E83189 /* KTTaskBase.m */; };
-		691FA0761996EDB300E83189 /* KTTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 691FA0751996EDB300E83189 /* KTTheme.m */; };
-		691FA0791996EDB400E83189 /* KTTaskPrototype.m in Sources */ = {isa = PBXBuildFile; fileRef = 691FA0781996EDB400E83189 /* KTTaskPrototype.m */; };
-		691FA07C1996EDB400E83189 /* KTTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 691FA07B1996EDB400E83189 /* KTTask.m */; };
 		6922B2DC197441610022BC0A /* CCAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 6922B20D197441610022BC0A /* CCAction.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		6922B2DD197441610022BC0A /* CCActionCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 6922B20F197441610022BC0A /* CCActionCamera.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		6922B2DE197441610022BC0A /* CCActionCatmullRom.m in Sources */ = {isa = PBXBuildFile; fileRef = 6922B211197441610022BC0A /* CCActionCatmullRom.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
@@ -351,6 +346,11 @@
 		69DA58DA14DF80AA001897E8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69DA58D814DF80AA001897E8 /* InfoPlist.strings */; };
 		69DA58DD14DF80AA001897E8 /* Kid_on_TimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DA58DC14DF80AA001897E8 /* Kid_on_TimeTests.m */; };
 		69DCAE9218BAA7CE00421CD4 /* KTTaskDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DCAE9118BAA7CE00421CD4 /* KTTaskDetailController.m */; };
+		69E0660E1B6597A000234320 /* KTTaskBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E0660D1B6597A000234320 /* KTTaskBase.m */; };
+		69E066111B6597A100234320 /* KTTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E066101B6597A100234320 /* KTTheme.m */; };
+		69E066141B6597A100234320 /* KTTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E066131B6597A100234320 /* KTTask.m */; };
+		69E066171B6597A100234320 /* KTRoutine.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E066161B6597A100234320 /* KTRoutine.m */; };
+		69E0661A1B6597A100234320 /* KTTaskPrototype.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E066191B6597A100234320 /* KTTaskPrototype.m */; };
 		69E25064194A98E70014E95F /* UIImage+ResizeMagick.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E25063194A98E70014E95F /* UIImage+ResizeMagick.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		69E4E65214EED45100FD7525 /* KidOnTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69E4E65014EED45100FD7525 /* KidOnTime.xcdatamodeld */; };
 		69E67C7919663148001C8DD1 /* KTRoutineQueries.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E67C7819663148001C8DD1 /* KTRoutineQueries.m */; };
@@ -522,16 +522,6 @@
 		691F13301971E572009F77CD /* KTAddTaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTAddTaskCell.h; sourceTree = "<group>"; };
 		691F13311971E572009F77CD /* KTAddTaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTAddTaskCell.m; sourceTree = "<group>"; };
 		691FA06D1996ED4000E83189 /* KidOnTime-KIDSCHED-477.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "KidOnTime-KIDSCHED-477.xcdatamodel"; sourceTree = "<group>"; };
-		691FA06E1996EDB300E83189 /* KTRoutine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTRoutine.h; sourceTree = "<group>"; };
-		691FA06F1996EDB300E83189 /* KTRoutine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTRoutine.m; sourceTree = "<group>"; };
-		691FA0711996EDB300E83189 /* KTTaskBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTTaskBase.h; sourceTree = "<group>"; };
-		691FA0721996EDB300E83189 /* KTTaskBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTTaskBase.m; sourceTree = "<group>"; };
-		691FA0741996EDB300E83189 /* KTTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTTheme.h; sourceTree = "<group>"; };
-		691FA0751996EDB300E83189 /* KTTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTTheme.m; sourceTree = "<group>"; };
-		691FA0771996EDB400E83189 /* KTTaskPrototype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTTaskPrototype.h; sourceTree = "<group>"; };
-		691FA0781996EDB400E83189 /* KTTaskPrototype.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTTaskPrototype.m; sourceTree = "<group>"; };
-		691FA07A1996EDB400E83189 /* KTTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTTask.h; sourceTree = "<group>"; };
-		691FA07B1996EDB400E83189 /* KTTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTTask.m; sourceTree = "<group>"; };
 		6922B20C197441610022BC0A /* CCAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAction.h; sourceTree = "<group>"; };
 		6922B20D197441610022BC0A /* CCAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAction.m; sourceTree = "<group>"; };
 		6922B20E197441610022BC0A /* CCActionCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCActionCamera.h; sourceTree = "<group>"; };
@@ -1055,6 +1045,18 @@
 		69DA58DC14DF80AA001897E8 /* Kid_on_TimeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Kid_on_TimeTests.m; sourceTree = "<group>"; };
 		69DCAE9018BAA7CE00421CD4 /* KTTaskDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KTTaskDetailController.h; path = "Kid on Time/KTTaskDetailController.h"; sourceTree = "<group>"; };
 		69DCAE9118BAA7CE00421CD4 /* KTTaskDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KTTaskDetailController.m; path = "Kid on Time/KTTaskDetailController.m"; sourceTree = "<group>"; };
+		69E065E91B65923600234320 /* KidOnTime-KIDSCHED-519.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "KidOnTime-KIDSCHED-519.xcdatamodel"; sourceTree = "<group>"; };
+		69E065EA1B65935400234320 /* KTTaskImageState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTTaskImageState.h; sourceTree = "<group>"; };
+		69E0660C1B6597A000234320 /* KTTaskBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KTTaskBase.h; path = ../KTTaskBase.h; sourceTree = "<group>"; };
+		69E0660D1B6597A000234320 /* KTTaskBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KTTaskBase.m; path = ../KTTaskBase.m; sourceTree = "<group>"; };
+		69E0660F1B6597A100234320 /* KTTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KTTheme.h; path = ../KTTheme.h; sourceTree = "<group>"; };
+		69E066101B6597A100234320 /* KTTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KTTheme.m; path = ../KTTheme.m; sourceTree = "<group>"; };
+		69E066121B6597A100234320 /* KTTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KTTask.h; path = ../KTTask.h; sourceTree = "<group>"; };
+		69E066131B6597A100234320 /* KTTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KTTask.m; path = ../KTTask.m; sourceTree = "<group>"; };
+		69E066151B6597A100234320 /* KTRoutine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KTRoutine.h; path = ../KTRoutine.h; sourceTree = "<group>"; };
+		69E066161B6597A100234320 /* KTRoutine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KTRoutine.m; path = ../KTRoutine.m; sourceTree = "<group>"; };
+		69E066181B6597A100234320 /* KTTaskPrototype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KTTaskPrototype.h; path = ../KTTaskPrototype.h; sourceTree = "<group>"; };
+		69E066191B6597A100234320 /* KTTaskPrototype.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KTTaskPrototype.m; path = ../KTTaskPrototype.m; sourceTree = "<group>"; };
 		69E25062194A98E70014E95F /* UIImage+ResizeMagick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ResizeMagick.h"; sourceTree = "<group>"; };
 		69E25063194A98E70014E95F /* UIImage+ResizeMagick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ResizeMagick.m"; sourceTree = "<group>"; };
 		69E4E65114EED45100FD7525 /* KidOnTime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KidOnTime.xcdatamodel; sourceTree = "<group>"; };
@@ -1648,17 +1650,17 @@
 		692A8CCD14E88CF700AA5D42 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				69E066181B6597A100234320 /* KTTaskPrototype.h */,
+				69E066191B6597A100234320 /* KTTaskPrototype.m */,
+				69E066151B6597A100234320 /* KTRoutine.h */,
+				69E066161B6597A100234320 /* KTRoutine.m */,
+				69E066121B6597A100234320 /* KTTask.h */,
+				69E066131B6597A100234320 /* KTTask.m */,
+				69E0660F1B6597A100234320 /* KTTheme.h */,
+				69E066101B6597A100234320 /* KTTheme.m */,
+				69E0660C1B6597A000234320 /* KTTaskBase.h */,
+				69E0660D1B6597A000234320 /* KTTaskBase.m */,
 				69E4E65014EED45100FD7525 /* KidOnTime.xcdatamodeld */,
-				691FA06E1996EDB300E83189 /* KTRoutine.h */,
-				691FA06F1996EDB300E83189 /* KTRoutine.m */,
-				691FA0711996EDB300E83189 /* KTTaskBase.h */,
-				691FA0721996EDB300E83189 /* KTTaskBase.m */,
-				691FA0741996EDB300E83189 /* KTTheme.h */,
-				691FA0751996EDB300E83189 /* KTTheme.m */,
-				691FA0771996EDB400E83189 /* KTTaskPrototype.h */,
-				691FA0781996EDB400E83189 /* KTTaskPrototype.m */,
-				691FA07A1996EDB400E83189 /* KTTask.h */,
-				691FA07B1996EDB400E83189 /* KTTask.m */,
 				6924A43A1503FB2E00981EB9 /* Plus */,
 			);
 			name = "Data Model";
@@ -1693,6 +1695,7 @@
 			children = (
 				6956547915AE378100A39EC3 /* KTConstants.h */,
 				690CCD561569389E009FAACA /* KTTaskTypes.h */,
+				69E065EA1B65935400234320 /* KTTaskImageState.h */,
 				6915C19E193171F100C77F88 /* RTSImageSize.h */,
 				6940594519317728009BFC34 /* RTSImageSize.m */,
 				694543301568049000892036 /* RTSAppHelper.h */,
@@ -2911,17 +2914,14 @@
 				6922B327197441610022BC0A /* CCGLView.m in Sources */,
 				69F827C6188CAFE0004D3B7C /* CollectionCell.m in Sources */,
 				6932CE9214F1F046005C8282 /* KTDatabasePopulator.m in Sources */,
-				691FA0791996EDB400E83189 /* KTTaskPrototype.m in Sources */,
 				6922B37A197441740022BC0A /* vec2.c in Sources */,
 				6922B318197441610022BC0A /* CCTMXLayer.m in Sources */,
 				6922B311197441610022BC0A /* CCSpriteFrame.m in Sources */,
 				6922B312197441610022BC0A /* CCSpriteFrameCache.m in Sources */,
-				691FA0701996EDB300E83189 /* KTRoutine.m in Sources */,
 				69FB4A2E19450903003755D7 /* ELCImagePickerDemoViewController.m in Sources */,
 				69F497A214FAF94200CB0BA3 /* KTRoutinePlus.m in Sources */,
 				6940594619317728009BFC34 /* RTSImageSize.m in Sources */,
 				6922B314197441610022BC0A /* CCTextureAtlas.m in Sources */,
-				691FA07C1996EDB400E83189 /* KTTask.m in Sources */,
 				6922B328197441610022BC0A /* CCWindow.m in Sources */,
 				6924A43D1504044B00981EB9 /* RTSTimeUtils.m in Sources */,
 				691F132C1971BBAB009F77CD /* KTErrorReporterController.m in Sources */,
@@ -2937,6 +2937,7 @@
 				6922B310197441610022BC0A /* CCSpriteBatchNode.m in Sources */,
 				694BAD61151E9761008505FE /* KTBaseDAO.m in Sources */,
 				694BAD64151E9A6C008505FE /* KTTaskQueries.m in Sources */,
+				69E066171B6597A100234320 /* KTRoutine.m in Sources */,
 				69277129151EACE2005AC72F /* KTDataAccess.m in Sources */,
 				6922B345197441670022BC0A /* CDOpenALSupport.m in Sources */,
 				69F827C5188CAFE0004D3B7C /* CategoryCell.m in Sources */,
@@ -2993,11 +2994,11 @@
 				694E7FF41597EC0C00A63EDC /* KTCocos2dSprite.m in Sources */,
 				6922B2DC197441610022BC0A /* CCAction.m in Sources */,
 				6922B32F197441610022BC0A /* CCVertex.m in Sources */,
-				691FA0761996EDB300E83189 /* KTTheme.m in Sources */,
 				69914F0815AA221600F66890 /* RTSCorner.m in Sources */,
 				69A2BF271B3F779D003B7F82 /* GMImagePickerController.m in Sources */,
 				6956547015AE15B100A39EC3 /* KTCocos2dLabel.m in Sources */,
 				6956547815AE36A600A39EC3 /* KTPointCount.m in Sources */,
+				69E0660E1B6597A000234320 /* KTTaskBase.m in Sources */,
 				69FAFBBF189367AB00034AF4 /* UICollectionView+Draggable.m in Sources */,
 				693B93C415B1195E0020FBB1 /* KTSoundPlayer.m in Sources */,
 				691A9FFB19340BA5005870B4 /* KTRoutineAddTasksBaseController.m in Sources */,
@@ -3015,6 +3016,7 @@
 				6922B347197441670022BC0A /* CDXPropertyModifierAction.m in Sources */,
 				699FD9CE15E1CF0600B54925 /* KTTaskPlus.m in Sources */,
 				6922B303197441610022BC0A /* CCParticleBatchNode.m in Sources */,
+				69E066141B6597A100234320 /* KTTask.m in Sources */,
 				6922B32C197441610022BC0A /* CCFileUtils.m in Sources */,
 				6922B2DD197441610022BC0A /* CCActionCamera.m in Sources */,
 				6922B2EB197441610022BC0A /* CCAtlasNode.m in Sources */,
@@ -3062,9 +3064,11 @@
 				6922B372197441740022BC0A /* matrix.c in Sources */,
 				69F827C2188CAFE0004D3B7C /* AppDelegate.m in Sources */,
 				69FAFBBD189367AB00034AF4 /* LSCollectionViewLayoutHelper.m in Sources */,
+				69E0661A1B6597A100234320 /* KTTaskPrototype.m in Sources */,
 				6922B32D197441610022BC0A /* CCProfiling.m in Sources */,
 				6922B320197441610022BC0A /* CCDirectorIOS.m in Sources */,
 				6946101B176E669700A7763F /* UIImage+UIImage_fixOrientation_h.m in Sources */,
+				69E066111B6597A100234320 /* KTTheme.m in Sources */,
 				6922B34A197441670022BC0A /* SimpleAudioEngine.m in Sources */,
 				6922B2F2197441610022BC0A /* CCDrawNode.m in Sources */,
 				69FB4A2719450903003755D7 /* ELCImagePickerController.m in Sources */,
@@ -3087,7 +3091,6 @@
 				6922B30E197441610022BC0A /* ccShaders.m in Sources */,
 				6922B36E197441740022BC0A /* aabb.c in Sources */,
 				6987C0E91981F9890054A915 /* KTPhotoAccessChecker.m in Sources */,
-				691FA0731996EDB300E83189 /* KTTaskBase.m in Sources */,
 				6922B2E4197441610022BC0A /* CCActionManager.m in Sources */,
 				6922B300197441610022BC0A /* CCNode+Debug.m in Sources */,
 				6922B31C197441610022BC0A /* CCTransition.m in Sources */,
@@ -3438,6 +3441,7 @@
 		69E4E65014EED45100FD7525 /* KidOnTime.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				69E065E91B65923600234320 /* KidOnTime-KIDSCHED-519.xcdatamodel */,
 				6916471E1992BC62001442CA /* KidOnTime-KIDSCHED-476.xcdatamodel */,
 				691FA06D1996ED4000E83189 /* KidOnTime-KIDSCHED-477.xcdatamodel */,
 				69FD02C819672A9E0093B05E /* KidOnTime-KIDSCHED-411.xcdatamodel */,
@@ -3453,7 +3457,7 @@
 				69EB68FC14EEDD9800655EDA /* KidOnTime-KIDSCHED-20.xcdatamodel */,
 				69E4E65114EED45100FD7525 /* KidOnTime.xcdatamodel */,
 			);
-			currentVersion = 691FA06D1996ED4000E83189 /* KidOnTime-KIDSCHED-477.xcdatamodel */;
+			currentVersion = 69E065E91B65923600234320 /* KidOnTime-KIDSCHED-519.xcdatamodel */;
 			path = KidOnTime.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

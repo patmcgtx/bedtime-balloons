@@ -80,6 +80,9 @@
 //        [[NSNotificationCenter defaultCenter] postNotificationName:KTNotificationTaskImageDownloadStarted
 //                                                            object:taskToAdd];
         
+        taskToAdd.imageState = KTTaskImageStateDowloadingImage;
+        
+        
         [imageManager requestImageDataForAsset:anAsset options:imageRequestOptions resultHandler:^(NSData *imageData, NSString *dataUTI, UIImageOrientation orientation, NSDictionary *info) {
             
             KTTask *taskForImage = [[[KTDataAccess sharedInstance] taskQueries] getTaskByObjectId:addedTaskObjectId];
@@ -101,6 +104,7 @@
                 id downloadError = [info valueForKey:@"PHImageErrorKey"];
                 
                 if (downloadError) {
+                    taskToAdd.imageState = KTTaskImageStateDownloadFailed;
                     [[NSNotificationCenter defaultCenter] postNotificationName:KTNotificationTaskImageDownloadFailed
                                                                         object:taskForImage];
                 }

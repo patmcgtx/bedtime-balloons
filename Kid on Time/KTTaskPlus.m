@@ -58,6 +58,15 @@
     return retval;
 }
 
+-(KTTaskImageState)imageState {
+    return (KTTaskImageState) [self.imageStateRaw intValue];
+}
+
+-(void)setImageState:(KTTaskImageState)imageState {
+    self.imageStateRaw = [NSNumber numberWithInt:imageState];
+    [[KTDataAccess sharedInstance] commitChanges];
+}
+
 -(UIImage*) imageWithSize:(RTSImageSize) imageSize {
 
     UIImage* retval = nil;
@@ -149,6 +158,8 @@
         
         preview = [baseImage resizedImageByMagick: @"560x420#"];
         [UIImagePNGRepresentation(preview) writeToFile:[self pathForCustomImageWithSize:RTSImageSizeLarge] atomically:YES];
+        
+        self.imageState = KTTaskImageStateGood;
         
         // Let the task listeners know when the images are ready
         [[NSNotificationCenter defaultCenter] postNotificationName:KTNotificationTaskImageDidChange

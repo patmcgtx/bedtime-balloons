@@ -14,6 +14,7 @@
         <userInfo/>
     </entity>
     <entity name="Task" representedClassName="KTTask" parentEntity="TaskBase">
+        <attribute name="imageStateRaw" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="routine" optional="YES" maxCount="1" deletionRule="Nullify" ordered="YES" destinationEntity="Routine" inverseName="tasks" inverseEntity="Routine">
             <userInfo/>
         </relationship>
@@ -41,7 +42,7 @@
     </entity>
     <elements>
         <element name="Routine" positionX="-74" positionY="171" width="128" height="103"/>
-        <element name="Task" positionX="-288" positionY="-18" width="128" height="60"/>
+        <element name="Task" positionX="-288" positionY="-18" width="128" height="75"/>
         <element name="TaskBase" positionX="-153" positionY="-207" width="128" height="103"/>
         <element name="TaskPrototype" positionX="16" positionY="-3" width="128" height="60"/>
         <element name="Theme" positionX="160" positionY="192" width="128" height="90"/>

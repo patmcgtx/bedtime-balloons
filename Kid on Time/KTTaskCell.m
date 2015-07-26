@@ -73,15 +73,19 @@
     
     UIImage* taskImage = [updatedTask imageWithSize:RTSImageSizeMedium];
     
-    if ( taskImage ) {
+    if ( taskImage && updatedTask.imageState == KTTaskImageStateGood ) {
         self.taskPreviewImage.image = taskImage;
         self.taskPreviewImage.hidden = NO;
-//        [self hideProcessingImage];
+        [self hideProcessingImage];
     }
-    else {
-//        [self showLoadingImage];
+    else if (updatedTask.imageState == KTTaskImageStateDowloadingImage) {
         if (updatedTask.isCustomTask) {
             [self showImageDownloadInProgress];
+        }
+    }
+    else if (updatedTask.imageState == KTTaskImageStateDownloadFailed) {
+        if (updatedTask.isCustomTask) {
+            [self showImageDownloadFailed];
         }
     }
     
@@ -262,12 +266,12 @@
     [self.activityIndicator stopAnimating];
 }
 
--(void) showProcessingImage {
-    self.taskPreviewImage.hidden = YES;
-    self.taskPreviewImage.image = nil;
-    [self.activityIndicator startAnimating];
-    self.activityIndicator.hidden = NO;
-}
+//-(void) showProcessingImage {
+//    self.taskPreviewImage.hidden = YES;
+//    self.taskPreviewImage.image = nil;
+//    [self.activityIndicator startAnimating];
+//    self.activityIndicator.hidden = NO;
+//}
 
 -(void) showImageDownloadInProgress {
     self.taskPreviewImage.hidden = YES;

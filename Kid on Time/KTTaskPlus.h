@@ -10,6 +10,7 @@
 #import "KTTask.h"
 #import "RTSImageSize.h"
 #import "KTTaskPrototype.h"
+#import "KTTaskImageState.h"
 
 /*
  * Add methods to the CoreData-generated task entity class.
@@ -17,6 +18,8 @@
  * on the core data.
  */
 @interface KTTask (plusMethods)
+
+@property KTTaskImageState imageState;
 
 // Creates empty and and does not commit
 +(KTTask*) task;
