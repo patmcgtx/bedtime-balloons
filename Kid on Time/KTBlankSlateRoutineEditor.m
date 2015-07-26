@@ -54,13 +54,28 @@
     [self cancel];
 }
 
+- (BOOL)assetsPickerController:(GMImagePickerController *)picker shouldShowAsset:(PHAsset *)asset {
+    return asset.mediaType == PHAssetMediaTypeImage;
+}
+
+- (BOOL)assetsPickerController:(GMImagePickerController *)picker shouldEnableAsset:(PHAsset *)asset {
+    return asset.mediaType == PHAssetMediaTypeImage;
+}
+
+- (BOOL)assetsPickerController:(GMImagePickerController *)picker shouldSelectAsset:(PHAsset *)asset {
+    return asset.mediaType == PHAssetMediaTypeImage;
+}
+
+- (BOOL)assetsPickerController:(GMImagePickerController *)picker shouldHighlightAsset:(PHAsset *)asset {
+    return asset.mediaType == PHAssetMediaTypeImage;
+}
+
 #pragma mark - Internal helpers
 
 -(void) saveImagesAsTasks:(NSArray *)selectedAssets {
     
     NSMutableOrderedSet* tasksToAdd = [NSMutableOrderedSet orderedSetWithCapacity:[selectedAssets count]];
     PHImageManager *imageManager = [PHImageManager defaultManager];
-    CGSize screenSize = [UIScreen mainScreen].bounds.size;
     
     // See http://nshipster.com/phimagemanager/
     PHImageRequestOptions *imageRequestOptions = [[PHImageRequestOptions alloc] init];
