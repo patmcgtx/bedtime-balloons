@@ -12,6 +12,7 @@
 @interface KTRoutineTaskPreviewCell : UICollectionViewCell
 
 @property (strong, nonatomic) KTTask* taskEntity;
+@property (nonatomic) BOOL isWaitingForDownload;
 
 -(void) updateForTask:(KTTask*) taskEntity;
 

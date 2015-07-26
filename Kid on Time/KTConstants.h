@@ -55,6 +55,8 @@
 #define KTNotificationRoutineTasksDidChange @"KTNotificationRoutineTasksDidChange" // Number or order of a routine's tasks changed
 #define KTNotificationTaskNameDidChange @"KTNotificationTaskNameDidChange"
 #define KTNotificationTaskImageDidChange @"KTNotificationTaskImageDidChange"
+#define KTNotificationTaskImageDownloadFailed @"KTNotificationTaskImageDownloadFailed"
+//#define KTNotificationTaskImageDownloadStarted @"KTNotificationTaskImageDownloadStarted"
 #define KTNotificationDidDeleteRoutine @"KTNotificationDidDeleteRoutine"
 #define KTNotificationDidAddRoutine @"KTNotificationDidAddRoutine"
 #define KTNotificationDidDeleteTask @"KTNotificationDidDeleteTask"

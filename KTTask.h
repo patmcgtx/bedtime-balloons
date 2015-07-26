@@ -2,7 +2,7 @@
 //  KTTask.h
 //  Kid on Time
 //
-//  Created by Patrick McGonigle on 8/9/14.
+//  Created by Patrick McGonigle on 7/26/15.
 //
 //
 
@@ -14,6 +14,7 @@
 
 @interface KTTask : KTTaskBase
 
+@property (nonatomic, retain) NSNumber * imageStateRaw;
 @property (nonatomic, retain) KTRoutine *routine;
 
 @end

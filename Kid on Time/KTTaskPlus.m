@@ -58,6 +58,15 @@
     return retval;
 }
 
+-(KTTaskImageState)imageState {
+    return (KTTaskImageState) [self.imageStateRaw intValue];
+}
+
+-(void)setImageState:(KTTaskImageState)imageState {
+    self.imageStateRaw = [NSNumber numberWithInt:imageState];
+    [[KTDataAccess sharedInstance] commitChanges];
+}
+
 -(UIImage*) imageWithSize:(RTSImageSize) imageSize {
 
     UIImage* retval = nil;
@@ -94,6 +103,17 @@
     
     return retval;
 }
+
+//-(UIImage*) placeholderImage {
+//    
+//    UIImage* retval = nil;
+//    
+//    if ( self.isCustomTask ) {
+//        retval = [UIImage imageWithContentsOfFile:[self pathForPlaceholderImage]];
+//    }
+//    
+//    return retval;
+//}
 
 -(void) deleteCustomImages {
     
@@ -139,11 +159,21 @@
         preview = [baseImage resizedImageByMagick: @"560x420#"];
         [UIImagePNGRepresentation(preview) writeToFile:[self pathForCustomImageWithSize:RTSImageSizeLarge] atomically:YES];
         
+        self.imageState = KTTaskImageStateGood;
+        
         // Let the task listeners know when the images are ready
         [[NSNotificationCenter defaultCenter] postNotificationName:KTNotificationTaskImageDidChange
                                                             object:self];        
     }
 }
+
+//-(void) savePlaceholderImage:(UIImage*) placeholderImage {
+//
+//    [UIImagePNGRepresentation(placeholderImage) writeToFile:[self pathForPlaceholderImage] atomically:YES];
+//    
+//    [[NSNotificationCenter defaultCenter] postNotificationName:KTNotificationTaskPlaceholderImageDidChange
+//                                                        object:self];
+//}
 
 -(BOOL) mayebUpdateName:(NSString*) taskName minTimeInSecs:(NSUInteger) minSecs maxTimeInSecs:(NSUInteger) maxSecs commit:(BOOL) doCommit {
     
@@ -215,5 +245,24 @@
     
     return retval;
 }
+
+//-(NSString*) pathForPlaceholderImage {
+//    
+//    NSString* retval = nil;
+//    
+//    if ( [self isCustomTask] ) {
+//        
+//        // e.g. placeholder-image-p46@2x.png
+//        NSString* pngFileName = [NSString stringWithFormat:@"placeholder-image-%@-@2x.png", [self shortId]];
+//        
+//        // e.g. /var/mobile/Applications/B3C2AAB7-4BF1-46A3-A45C-3DDDB92390ED/Documents
+//        NSString* docsDirPath = [[[RTSAppHelper sharedInstance] applicationDocumentsDirectory] path];
+//        
+//        // e.g. /var/mobile/Applications/B3C2AAB7-4BF1-46A3-A45C-3DDDB92390ED/Documents/custom-image-p11-sm.png
+//        retval = [docsDirPath stringByAppendingPathComponent:pngFileName];
+//    }
+//    
+//    return retval;
+//}
 
 @end

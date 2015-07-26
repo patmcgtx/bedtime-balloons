@@ -20,7 +20,8 @@
 #import "RTSIndexPath.h"
 #import "KTRunRoutineTaskController.h"
 #import "KTRoutineAddTasksController.h"
-#import "ELCImagePickerController.h"
+//#import "ELCImagePickerController.h"
+#import "GMImagePickerController.h"
 #import "KTBlankSlateRoutineEditor.h"
 #import <MobileCoreServices/UTCoreTypes.h>
 #import "KTAddTaskCell.h"
@@ -33,7 +34,7 @@
 @interface KTRoutineInfoController ()
 
 @property (strong, nonatomic) KTBlankSlateRoutineEditor* blankSlateEditor;
-@property (strong, nonatomic) ELCImagePickerController* multiImagePicker;
+@property (strong, nonatomic) GMImagePickerController* multiImagePicker;
 @property (strong, nonatomic) UIImagePickerController* cameraImagePicker;
 
 @property (strong, nonatomic) UIBarButtonItem* backButton;
@@ -104,10 +105,11 @@
     self.blankSlateEditor = [[KTBlankSlateRoutineEditor alloc] init];
     self.blankSlateEditor.delegate = self;
     
-    self.multiImagePicker = [[ELCImagePickerController alloc] initImagePicker];
-    self.multiImagePicker.maximumImagesCount = KTImagePickerMaxImages;
-    self.multiImagePicker.returnsOriginalImage = KTImagePickerReturnsOriginal;
-    self.multiImagePicker.imagePickerDelegate = self.blankSlateEditor;
+    self.multiImagePicker = [[GMImagePickerController alloc] init];
+    self.multiImagePicker.delegate = self.blankSlateEditor;
+//    self.multiImagePicker.maximumImagesCount = KTImagePickerMaxImages;
+//    self.multiImagePicker.returnsOriginalImage = KTImagePickerReturnsOriginal;
+//    self.multiImagePicker.imagePickerDelegate = self.blankSlateEditor;
     
     // Also the camera image picker
     if ([UIImagePickerController
@@ -116,7 +118,7 @@
         self.cameraImagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
         self.cameraImagePicker.mediaTypes = [NSArray arrayWithObject:(NSString *)kUTTypeImage];
         self.cameraImagePicker.allowsEditing = YES;
-        self.cameraImagePicker.delegate = self.blankSlateEditor;
+//        self.cameraImagePicker.delegate = self.blankSlateEditor;
     }
     else {
         self.cameraImagePicker = nil;
@@ -467,20 +469,20 @@
 
 #pragma mark - KTEditRoutineDelegate
 
--(void) didCancelEditingRoutine {
+-(void) didFinishEditingRoutine {
     [[self presentedViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void) didInsertTasksAtBeginningOfRoutine:(NSMutableOrderedSet*) insertedTasks {
     
-    [self.multiImagePicker dismissViewControllerAnimated:YES completion:^{
-        // Animate the task additions after returning to the parent view
+//    [self.multiImagePicker dismissViewControllerAnimated:YES completion:^{
+//        // Animate the task additions after returning to the parent view
         NSNumber* numberOfTasksAdded = [NSNumber numberWithUnsignedInteger:[insertedTasks count]];
         [[NSNotificationCenter defaultCenter] postNotificationName:KTNotificationDidAddTasksToRoutine
                                                             object:self
                                                           userInfo:@{ KTKeyRoutineEntity : self.routineEntity,
                                                                       KTKeyNumberOfItems : numberOfTasksAdded }];
-    }];
+//    }];
     
     if (self.cameraImagePicker) {
         [self.cameraImagePicker dismissViewControllerAnimated:YES completion:^{

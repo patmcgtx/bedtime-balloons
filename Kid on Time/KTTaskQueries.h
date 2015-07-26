@@ -17,5 +17,6 @@
 
 -(NSArray*) getTaskPrototypes;
 -(KTTaskPrototype*) getTaskPrototypeByType:(NSString*) prototypeName;
+-(KTTask*) getTaskByObjectId:(NSManagedObjectID*) objectId;
 
 @end

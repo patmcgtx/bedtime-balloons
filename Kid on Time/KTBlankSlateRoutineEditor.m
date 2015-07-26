@@ -31,13 +31,16 @@
     return self;
 }
 
-#pragma mark - ELCImagePickerControllerDelegate for selecting photos from the library
+#pragma mark - GMImagePickerController
 
-- (void)elcImagePickerController:(ELCImagePickerController *)picker didFinishPickingMediaWithInfo:(NSArray *)selectImageInfo {
-    [self saveImagesAsTasks:selectImageInfo];
+- (void)assetsPickerController:(GMImagePickerController *)picker didFinishPickingAssets:(NSArray *)assets {
+    [self saveImagesAsTasks:assets];
+    if ( self.delegate ) {
+        [self.delegate didFinishEditingRoutine];
+    }
 }
 
-- (void)elcImagePickerControllerDidCancel:(ELCImagePickerController *)picker {
+- (void)assetsPickerControllerDidCancel:(GMImagePickerController *)picker {
     [self cancel];
 }
 
@@ -53,37 +56,74 @@
 
 #pragma mark - Internal helpers
 
--(void) saveImagesAsTasks:(NSArray *)selectImageInfo {
+-(void) saveImagesAsTasks:(NSArray *)selectedAssets {
     
-    NSMutableOrderedSet* tasksToAdd = [NSMutableOrderedSet orderedSetWithCapacity:[selectImageInfo count]];
+    NSMutableOrderedSet* tasksToAdd = [NSMutableOrderedSet orderedSetWithCapacity:[selectedAssets count]];
+    PHImageManager *imageManager = [PHImageManager defaultManager];
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
     
-    // To map tasks to images
-    NSMutableArray* imagesForTasksToAdd = [NSMutableArray arrayWithCapacity:[selectImageInfo count]];
+    // See http://nshipster.com/phimagemanager/
+    PHImageRequestOptions *imageRequestOptions = [[PHImageRequestOptions alloc] init];
+    imageRequestOptions.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
+    imageRequestOptions.version = PHImageRequestOptionsVersionCurrent;
+    imageRequestOptions.resizeMode = PHImageRequestOptionsResizeModeFast;
+    imageRequestOptions.synchronous = NO;
+    imageRequestOptions.networkAccessAllowed = YES;
     
-	for (NSDictionary* imageDict in selectImageInfo) {
+	for (PHAsset *anAsset in selectedAssets) {
         
-        KTTask* taskToAdd = [KTTask taskFromPrototype:self.customTaskPrototype name:@"" commit:NO];
+        KTTask* taskToAdd = [KTTask taskFromPrototype:self.customTaskPrototype name:@"" commit:YES];
+        NSManagedObjectID *addedTaskObjectId = [taskToAdd objectID];
         [tasksToAdd addObject:taskToAdd];
         
-        // Save task image later -- see notes below...
-        UIImage* image = [imageDict objectForKey:UIImagePickerControllerOriginalImage];
-        [imagesForTasksToAdd addObject:image];
+        // Kick off an async download of the image for iCloud
+//        [[NSNotificationCenter defaultCenter] postNotificationName:KTNotificationTaskImageDownloadStarted
+//                                                            object:taskToAdd];
+        
+        taskToAdd.imageState = KTTaskImageStateDowloadingImage;
+        
+        
+        [imageManager requestImageDataForAsset:anAsset options:imageRequestOptions resultHandler:^(NSData *imageData, NSString *dataUTI, UIImageOrientation orientation, NSDictionary *info) {
+            
+            KTTask *taskForImage = [[[KTDataAccess sharedInstance] taskQueries] getTaskByObjectId:addedTaskObjectId];
+            
+            if (imageData) {
+                
+                UIImage *downloadedImage = [UIImage imageWithData:imageData];
+                
+//                BOOL isDegraded = [[info valueForKey:@"PHImageResultIsDegradedKey"] boolValue];
+//                
+//                if (isDegraded) {
+//                    [taskForImage savePlaceholderImage:downloadedImage];
+//                }
+//                else {
+                    [taskForImage saveCustomImage:downloadedImage incudingOriginal:YES];
+//                }
+            }
+            else {
+                id downloadError = [info valueForKey:@"PHImageErrorKey"];
+                
+                if (downloadError) {
+                    taskToAdd.imageState = KTTaskImageStateDownloadFailed;
+                    [[NSNotificationCenter defaultCenter] postNotificationName:KTNotificationTaskImageDownloadFailed
+                                                                        object:taskForImage];
+                }
+                
+            }
+        }];
+        
+//        [imageManager requestImageForAsset:anAsset
+//                                targetSize:screenSize
+//                               contentMode:PHImageContentModeAspectFit
+//                                   options:imageRequestOptions
+//                             resultHandler:^(UIImage *result, NSDictionary *info) {
+//                                 // The download completed
+//                                 KTTask *taskForImage = [[[KTDataAccess sharedInstance] taskQueries] getTaskByObjectId:addedTaskObjectId];
+//                                 [taskForImage saveCustomImage:result incudingOriginal:YES];
+//                             }];
     }
     
     [self.routineEntity insertTasksAtBeginning:tasksToAdd commit:YES];
-    
-    // We have to save the task images ~after~ commiting to the db so that that filename
-    // comes out right.  The file name depends on the task's URIRepresentation which is
-    // only good if the task is committed to the db.
-    // Do this in the background since it can take a while (x several tasks)
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(queue, ^{
-        int imageIndex = 0;
-        for (KTTask* savedTask in tasksToAdd) {
-            UIImage* imageToSave = (UIImage*) [imagesForTasksToAdd objectAtIndex:imageIndex++];
-            [savedTask saveCustomImage:imageToSave incudingOriginal:YES];
-        }
-    });
     
     if ( self.delegate ) {
         [self.delegate didInsertTasksAtBeginningOfRoutine:tasksToAdd];
@@ -99,7 +139,7 @@
 
 -(void) cancel {
     if ( self.delegate ) {
-        [self.delegate didCancelEditingRoutine];
+        [self.delegate didFinishEditingRoutine];
     }
 }
 

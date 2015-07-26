@@ -10,6 +10,7 @@
 #import "KTTask.h"
 #import "RTSImageSize.h"
 #import "KTTaskPrototype.h"
+#import "KTTaskImageState.h"
 
 /*
  * Add methods to the CoreData-generated task entity class.
@@ -17,6 +18,8 @@
  * on the core data.
  */
 @interface KTTask (plusMethods)
+
+@property KTTaskImageState imageState;
 
 // Creates empty and and does not commit
 +(KTTask*) task;
@@ -33,7 +36,19 @@
  */
 -(UIImage*) imageWithSize:(RTSImageSize) imageSize;
 
+/*!
+ Gets a low-resolution iCloud image preview, accesible before the full iCloud image is downloaded.
+ @return The low-rez image, or nil if there is no preview image, such as with built-in tasks.
+ */
+//-(UIImage*) placeholderImage;
+
+/*!
+ Saves a low-resolution iCloud image preview, accesible before the full iCloud image is downloaded
+ */
+//-(void) savePlaceholderImage:(UIImage*) placeholderImage;
+
 -(void) saveCustomImage:(UIImage*) customImage incudingOriginal:(BOOL) saveOriginal;
+
 -(void) deleteCustomImages;
 
 -(NSUInteger) minTimeInMinutes;

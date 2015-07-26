@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ELCImagePickerController.h"
+#import "GMImagePickerController.h"
 #import "KTEditRoutineDelegate.h"
 #import "KTRoutine.h"
+#import "GMImagePickerController.h"
 
-@interface KTBlankSlateRoutineEditor : NSObject <ELCImagePickerControllerDelegate, UIImagePickerControllerDelegate>
+@interface KTBlankSlateRoutineEditor : NSObject <GMImagePickerControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) id<KTEditRoutineDelegate> delegate;
 @property (strong, nonatomic) KTRoutine* routineEntity;
