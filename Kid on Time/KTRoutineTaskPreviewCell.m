@@ -32,11 +32,13 @@
 -(void) prepareForReuse {
     
     [super prepareForReuse];
-    
+
     self.taskImageView.image = nil;
-//    [self showLoadingImage];
-//    [self hideProcessingImage];
-//    [self showImageDownloadInProgress];
+    self.taskImageView.hidden = NO;
+    self.activityIndicator.hidden = YES;
+    [self.activityIndicator stopAnimating];
+    self.taskStatusIndicator.hidden = YES;
+    self.taskStatusIndicator.image = nil;
 }
 
 -(void) updateForTask:(KTTask *)taskEntity {
@@ -133,8 +135,8 @@
     self.taskImageView.image = nil;
     self.activityIndicator.hidden = NO;
     [self.activityIndicator startAnimating];
-    self.taskStatusIndicator.hidden = NO;
-    self.taskStatusIndicator.image = [UIImage imageNamed:@"cloud-download"];
+    self.taskStatusIndicator.hidden = YES;
+    self.taskStatusIndicator.image = nil;
 }
 
 -(void) showImageDownloadFailed {

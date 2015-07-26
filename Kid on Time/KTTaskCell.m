@@ -53,8 +53,8 @@
     self.deleteButton.hidden = YES;
     self.activityIndicator.hidden = YES;
     [self.activityIndicator stopAnimating];
-    
-//    [self showImageDownloadInProgress];
+    self.taskStatusIndicator.image = nil;
+    self.taskStatusIndicator.hidden = YES;
 }
 
 -(void) prepareForTask:(KTTask*) updatedTask isEditing:(BOOL) isEditing isNew:(BOOL) isNew {
@@ -152,7 +152,6 @@
     // for several seconds, if not longer.
     dispatch_async(dispatch_get_main_queue(), ^{
 //        [self hideProcessingImage];
-//        self.taskStatusIndicator.hidden = NO;
         [self showImageDownloadFailed];
 //        self.taskPreviewImage.image = [UIImage imageNamed:@"cloud-storm"];
 //        [self hideLoadingImage];
@@ -278,8 +277,8 @@
     self.taskPreviewImage.image = nil;
     self.activityIndicator.hidden = NO;
     [self.activityIndicator startAnimating];
-    self.taskStatusIndicator.image = [UIImage imageNamed:@"cloud-download"];
-    self.taskStatusIndicator.hidden = NO;
+    self.taskStatusIndicator.image = nil;
+    self.taskStatusIndicator.hidden = YES;
 }
 
 -(void) showImageDownloadFailed {
