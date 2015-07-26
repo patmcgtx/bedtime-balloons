@@ -110,6 +110,10 @@
 //    self.multiImagePicker.maximumImagesCount = KTImagePickerMaxImages;
 //    self.multiImagePicker.returnsOriginalImage = KTImagePickerReturnsOriginal;
 //    self.multiImagePicker.imagePickerDelegate = self.blankSlateEditor;
+    self.multiImagePicker.customSmartCollections = @[@(PHAssetCollectionSubtypeSmartAlbumFavorites),
+                                                     @(PHAssetCollectionSubtypeSmartAlbumRecentlyAdded),
+                                                     @(PHAssetCollectionSubtypeSmartAlbumBursts)];
+    
     
     // Also the camera image picker
     if ([UIImagePickerController
