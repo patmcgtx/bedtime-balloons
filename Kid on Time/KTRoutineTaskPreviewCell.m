@@ -43,12 +43,15 @@
     
     UIImage* taskImage = [taskEntity imageWithSize:RTSImageSizeSmall];
     
-    if ( taskImage ) {
+    if ( taskEntity.imageState == KTTaskImageStateGood ) {
         self.taskImageView.image = taskImage;
         [self hideProcessingImage];
     }
-    else {
-//        [self showProcessingImage];
+    else if ( taskEntity.imageState == KTTaskImageStateDowloadingImage ) {
+        [self showImageDownloadInProgress];
+    }
+    else if ( taskEntity.imageState == KTTaskImageStateDownloadFailed ) {
+        [self showImageDownloadFailed];
     }
 
     self.taskEntity = taskEntity;
@@ -116,6 +119,7 @@
     self.taskImageView.hidden = NO;
     self.activityIndicator.hidden = YES;
     [self.activityIndicator stopAnimating];
+    self.taskStatusIndicator.hidden = YES;
 }
 
 -(void) showProcessingImage {
@@ -129,6 +133,7 @@
     self.taskImageView.image = nil;
     self.activityIndicator.hidden = NO;
     [self.activityIndicator startAnimating];
+    self.taskStatusIndicator.hidden = NO;
     self.taskStatusIndicator.image = [UIImage imageNamed:@"cloud-download"];
 }
 
@@ -137,6 +142,7 @@
     self.taskImageView.image = nil;
     self.activityIndicator.hidden = YES;
     [self.activityIndicator stopAnimating];
+    self.taskStatusIndicator.hidden = NO;
     self.taskStatusIndicator.image = [UIImage imageNamed:@"cloud-storm"];
 }
 
