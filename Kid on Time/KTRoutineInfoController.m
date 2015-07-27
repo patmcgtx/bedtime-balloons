@@ -105,14 +105,6 @@
     self.blankSlateEditor = [[KTBlankSlateRoutineEditor alloc] init];
     self.blankSlateEditor.delegate = self;
     
-    self.multiImagePicker = [[GMImagePickerController alloc] init];
-    self.multiImagePicker.delegate = self.blankSlateEditor;
-    self.multiImagePicker.title = NSLocalizedString(@"label.tasks.photos", nil);
-    self.multiImagePicker.customSmartCollections = @[@(PHAssetCollectionSubtypeSmartAlbumFavorites),
-                                                     @(PHAssetCollectionSubtypeSmartAlbumRecentlyAdded),
-                                                     @(PHAssetCollectionSubtypeSmartAlbumBursts)];
-    
-    
     // Also the camera image picker
     if ([UIImagePickerController
          isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
@@ -500,6 +492,17 @@
 
 #pragma mark - Internal helpers
 
+// Get a fresh image picker to clear the user's previous selction of images
+-(GMImagePickerController*)freshImagePicker {
+    self.multiImagePicker = [[GMImagePickerController alloc] init];
+    self.multiImagePicker.delegate = self.blankSlateEditor;
+    self.multiImagePicker.title = NSLocalizedString(@"label.tasks.photos", nil);
+    self.multiImagePicker.customSmartCollections = @[@(PHAssetCollectionSubtypeSmartAlbumFavorites),
+                                                     @(PHAssetCollectionSubtypeSmartAlbumRecentlyAdded),
+                                                     @(PHAssetCollectionSubtypeSmartAlbumBursts)];
+    return self.multiImagePicker;
+}
+
 - (void)takePhoto
 {
     if ( self.cameraImagePicker ) {
@@ -526,7 +529,7 @@
 -(void) pickPhotos {
     if ( [KTPhotoAccessChecker vetPhotoAccess] ) {
         self.blankSlateEditor.routineEntity = self.routineEntity;
-        [self presentViewController:self.multiImagePicker animated:YES completion:nil];
+        [self presentViewController:[self freshImagePicker] animated:YES completion:nil];
     }
 }
 
