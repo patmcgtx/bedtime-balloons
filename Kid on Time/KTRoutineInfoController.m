@@ -107,9 +107,7 @@
     
     self.multiImagePicker = [[GMImagePickerController alloc] init];
     self.multiImagePicker.delegate = self.blankSlateEditor;
-//    self.multiImagePicker.maximumImagesCount = KTImagePickerMaxImages;
-//    self.multiImagePicker.returnsOriginalImage = KTImagePickerReturnsOriginal;
-//    self.multiImagePicker.imagePickerDelegate = self.blankSlateEditor;
+    self.multiImagePicker.title = NSLocalizedString(@"label.tasks.photos", nil);
     self.multiImagePicker.customSmartCollections = @[@(PHAssetCollectionSubtypeSmartAlbumFavorites),
                                                      @(PHAssetCollectionSubtypeSmartAlbumRecentlyAdded),
                                                      @(PHAssetCollectionSubtypeSmartAlbumBursts)];
