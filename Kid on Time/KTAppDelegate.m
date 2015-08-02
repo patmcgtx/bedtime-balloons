@@ -74,6 +74,8 @@ NSMutableArray *routines;
     KTDatabasePopulator* populator = [[KTDatabasePopulator alloc] init];
     [populator populateDbIfEmpty];
     
+    // If any downloads were in progress when the app was terminated,
+    // show them as failed now.
     [KTTask markAllDownloadingTasksAsFailed];
     
     return YES;
