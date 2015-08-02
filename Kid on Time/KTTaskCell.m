@@ -277,8 +277,8 @@
     self.taskPreviewImage.image = nil;
     self.activityIndicator.hidden = NO;
     [self.activityIndicator startAnimating];
-    self.taskStatusIndicator.image = nil;
-    self.taskStatusIndicator.hidden = YES;
+    self.taskStatusIndicator.image = [UIImage imageNamed:@"cloud-download"];
+    self.taskStatusIndicator.hidden = NO;
 }
 
 -(void) showImageDownloadFailed {
