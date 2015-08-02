@@ -122,32 +122,70 @@
         
         if ( [task isCustomTask] ) {
             
-            UIButton* cropButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            
-            cropButton.backgroundColor = [UIColor darkGrayColor];
-            cropButton.frame = CGRectMake(0.0, 0.0, 44.0, 44.0);
-            cropButton.alpha = 0.75;
-            cropButton.contentMode = UIViewContentModeCenter;
-            [cropButton setImage:[UIImage imageNamed:@"crop"] forState:UIControlStateNormal];
-            [cropButton setImageEdgeInsets:UIEdgeInsetsZero];
-            cropButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-            cropButton.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-            
-            // So I ended up adding the bigInvisibleButton below, since this little crop button
-            // was kind of hard to tap.  The big button just lets you tap anywhere on the image.
-            // So this button is disabled for now.  It could basically be in image view, but
-            // I am leaving it as a button in case I want to tweak it later.
-            //cropButton.enabled = YES;
-            //[cropButton addTarget:self action:@selector(openTaskImageEditor) forControlEvents:UIControlEventTouchUpInside];
-            
-            [preview addSubview:cropButton];
+            if (task.imageState == KTTaskImageStateDownloadFailed) {
 
-            UIButton* bigInvisibleButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            bigInvisibleButton.frame = CGRectMake(0.0, 0.0, preview.bounds.size.width, preview.bounds.size.height);
-            bigInvisibleButton.backgroundColor = [UIColor clearColor];
-            [bigInvisibleButton addTarget:self action:@selector(openTaskImageEditor) forControlEvents:UIControlEventTouchUpInside];
+                UIView* bgView = [[UIView alloc] initWithFrame:previewFrame];
+                bgView.backgroundColor = [UIColor whiteColor];
+                bgView.frame = CGRectMake(0.0, 0.0, previewFrame.size.width, previewFrame.size.height);
+                bgView.layer.borderColor = [[UIColor darkGrayColor] CGColor];
+                bgView.layer.borderWidth = 1.0;
+                [preview addSubview:bgView];
+
+                UIImageView* errorImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cloud-storm"]];
+                errorImage.center = CGPointMake(previewFrame.size.width / 2.0,
+                                                previewFrame.size.height / 2.0);
+                [preview addSubview:errorImage];
+            }
+            else if (task.imageState == KTTaskImageStateDowloadingImage) {
+
+                UIView* bgView = [[UIView alloc] initWithFrame:previewFrame];
+                bgView.backgroundColor = [UIColor whiteColor];
+                bgView.frame = CGRectMake(0.0, 0.0, previewFrame.size.width, previewFrame.size.height);
+                bgView.layer.borderColor = [[UIColor darkGrayColor] CGColor];
+                bgView.layer.borderWidth = 1.0;
+                [preview addSubview:bgView];
+                
+                UIImageView* downloadImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cloud-download"]];
+                downloadImage.center = CGPointMake(previewFrame.size.width / 2.0,
+                                                   previewFrame.size.height / 2.0);
+                [preview addSubview:downloadImage];
+                
+                UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+                activityIndicator.center = CGPointMake(previewFrame.size.width / 2.0,
+                                                       previewFrame.size.height / 2.0);
+                activityIndicator.hidden = NO;
+                [activityIndicator startAnimating];
+                [preview addSubview:activityIndicator];
+            }
+            else {
+                UIButton* cropButton = [UIButton buttonWithType:UIButtonTypeCustom];
+                
+                cropButton.backgroundColor = [UIColor darkGrayColor];
+                cropButton.frame = CGRectMake(0.0, 0.0, 44.0, 44.0);
+                cropButton.alpha = 0.75;
+                cropButton.contentMode = UIViewContentModeCenter;
+                [cropButton setImage:[UIImage imageNamed:@"crop"] forState:UIControlStateNormal];
+                [cropButton setImageEdgeInsets:UIEdgeInsetsZero];
+                cropButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+                cropButton.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+                
+                // So I ended up adding the bigInvisibleButton below, since this little crop button
+                // was kind of hard to tap.  The big button just lets you tap anywhere on the image.
+                // So this button is disabled for now.  It could basically be in image view, but
+                // I am leaving it as a button in case I want to tweak it later.
+                //cropButton.enabled = YES;
+                //[cropButton addTarget:self action:@selector(openTaskImageEditor) forControlEvents:UIControlEventTouchUpInside];
+                
+                [preview addSubview:cropButton];
+                
+                UIButton* bigInvisibleButton = [UIButton buttonWithType:UIButtonTypeCustom];
+                bigInvisibleButton.frame = CGRectMake(0.0, 0.0, preview.bounds.size.width, preview.bounds.size.height);
+                bigInvisibleButton.backgroundColor = [UIColor clearColor];
+                [bigInvisibleButton addTarget:self action:@selector(openTaskImageEditor) forControlEvents:UIControlEventTouchUpInside];
+                
+                [preview addSubview:bigInvisibleButton];
+            }
             
-            [preview addSubview:bigInvisibleButton];
         }
         
         [self.scrollView addSubview:preview];
@@ -209,9 +247,9 @@
     }
 }
 
--(void) refreshTaskPlaceholder:(NSNotification*) notification {
-    // TODO: KIDSCHED-519
-}
+//-(void) refreshTaskPlaceholder:(NSNotification*) notification {
+//    // TODO: KIDSCHED-519
+//}
 
 #pragma mark - Segues
 
