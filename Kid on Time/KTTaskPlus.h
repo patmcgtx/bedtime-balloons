@@ -61,4 +61,7 @@
 // Where is this task located within its routine? (zero-indexed)
 -(NSUInteger) indexWithinRoutine;
 
+// Finds all incomplete image downloads and tags them as failed
++(void)markAllDownloadingTasksAsFailed;
+
 @end

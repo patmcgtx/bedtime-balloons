@@ -14,6 +14,7 @@
 #import "KTConstants.h"
 #import "ADVTheme.h"
 #import "KTErrorReporter.h"
+#import "KTTaskPlus.h"
 
 @implementation KTAppDelegate
 
@@ -72,6 +73,8 @@ NSMutableArray *routines;
     // Populate the database if needed
     KTDatabasePopulator* populator = [[KTDatabasePopulator alloc] init];
     [populator populateDbIfEmpty];
+    
+    [KTTask markAllDownloadingTasksAsFailed];
     
     return YES;
 }							

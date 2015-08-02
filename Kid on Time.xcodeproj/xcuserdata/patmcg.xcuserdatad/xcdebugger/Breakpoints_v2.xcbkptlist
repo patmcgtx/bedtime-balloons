@@ -54,15 +54,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Kid on Time/KTTaskPlus.m"
-            timestampString = "459643639.914692"
+            timestampString = "460244414.372833"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "-saveCustomImage:incudingOriginal:"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Kid on Time/KTTaskPlus.m"
-            timestampString = "459643639.914692"
+            timestampString = "460244414.372833"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "-saveCustomImage:incudingOriginal:"
             landmarkType = "5">
          </BreakpointContent>
@@ -433,6 +433,70 @@
             endingLineNumber = "157"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Kid on Time/KTAppDelegate.m"
+            timestampString = "460243743.368046"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "-applicationWillTerminate:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Kid on Time/KTTaskPlus.m"
+            timestampString = "460243969.9734"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "+markAllDownloadingTasksAsFailed"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[KTTask(plusMethods) markAllDownloadingTasksAsFailed]"
+                  moduleName = "BedtimeBalloons"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/patmcg/Projects/bedtime-balloons/Kid%20on%20Time/KTTaskPlus.m"
+                  timestampString = "460244177.04905"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "850">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[KTTask(plusMethods) markAllDownloadingTasksAsFailed]"
+                  moduleName = "BedtimeBalloons"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/patmcg/Projects/bedtime-balloons/Kid%20on%20Time/KTTaskPlus.m"
+                  timestampString = "460244177.049318"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "974">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

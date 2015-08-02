@@ -67,6 +67,30 @@
     [[KTDataAccess sharedInstance] commitChanges];
 }
 
++(void)markAllDownloadingTasksAsFailed {
+    
+    NSManagedObjectContext* ctx = [[KTDataAccess sharedInstance] managedObjectContext];
+    NSEntityDescription *entityDescription = [NSEntityDescription
+                                              entityForName:@"Task" inManagedObjectContext:ctx];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:
+                              @"imageStateRaw = %@", [NSNumber numberWithInt:KTTaskImageStateDowloadingImage]];
+    [request setPredicate:predicate];
+
+    NSError *error;
+    NSArray *downlodingTasks = [ctx executeFetchRequest:request error:&error];
+    if (downlodingTasks)
+    {
+        for (KTTask *task in downlodingTasks) {
+            task.imageState = KTTaskImageStateDownloadFailed;
+        }
+    }
+    
+    [[KTDataAccess sharedInstance] commitChanges];
+}
+
 -(UIImage*) imageWithSize:(RTSImageSize) imageSize {
 
     UIImage* retval = nil;
