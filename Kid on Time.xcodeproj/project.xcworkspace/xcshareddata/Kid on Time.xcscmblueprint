@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DBCB488D4FB0F414E02A8725EDF2B729E05E2F5F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "DBCB488D4FB0F414E02A8725EDF2B729E05E2F5F" : 0,
+    "a5691636-453a-4fa1-8f72-782fb14b96cc++505" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "37C9E21B-9F77-4CE6-8219-9C2EA91B0942",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "DBCB488D4FB0F414E02A8725EDF2B729E05E2F5F" : "bedtime-balloons",
+    "a5691636-453a-4fa1-8f72-782fb14b96cc++505" : "kidontimem"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Kid on Time",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Kid on Time.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:patrickrts\/bedtime-balloons.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DBCB488D4FB0F414E02A8725EDF2B729E05E2F5F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/roundtripsw.svn.beanstalkapp.com\/kidontime",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "a5691636-453a-4fa1-8f72-782fb14b96cc++505"
+    }
+  ]
+}

@@ -285,6 +285,8 @@
     // Adjust indices for "add task" button
     [self.routineEntity moveTasksAtPosition:fromIndexPath.row-1 toPosition:toIndexPath.row-1 commit:YES];
     
+    [self renumberVisibleTasks];
+
     // Let other layers know about the update
     [[NSNotificationCenter defaultCenter] postNotificationName:KTNotificationRoutineTasksDidChange
                                                         object:self
