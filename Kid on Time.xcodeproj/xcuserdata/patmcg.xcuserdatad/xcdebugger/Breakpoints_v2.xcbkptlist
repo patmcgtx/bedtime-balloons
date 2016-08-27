@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Kid on Time/KTRoutineInfoController.m"
-            timestampString = "459649143.351484"
+            timestampString = "494033009.213727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "473"
-            endingLineNumber = "473"
+            startingLineNumber = "475"
+            endingLineNumber = "475"
             landmarkName = "-didInsertTasksAtBeginningOfRoutine:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Kid on Time/KTRoutineInfoController.m"
-            timestampString = "459649143.351484"
+            timestampString = "494033009.213727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "530"
-            endingLineNumber = "530"
+            startingLineNumber = "532"
+            endingLineNumber = "532"
             landmarkName = "-pickPhotos"
             landmarkType = "5">
          </BreakpointContent>
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Kid on Time/KTTaskCell.m"
-            timestampString = "459642839.546696"
+            timestampString = "494033009.213727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "141"
@@ -186,7 +186,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Kid on Time/KTTaskCell.m"
-            timestampString = "460232464.66442"
+            timestampString = "494033009.213727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "290"
@@ -202,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Kid on Time/KTTaskCell.m"
-            timestampString = "459646067.095085"
+            timestampString = "494033009.213727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "278"
@@ -218,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Kid on Time/KTTaskCell.m"
-            timestampString = "459646067.095085"
+            timestampString = "494033009.213727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "262"
@@ -234,7 +234,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Kid on Time/KTTaskCell.m"
-            timestampString = "459646067.095085"
+            timestampString = "494033009.213727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "162"
@@ -288,22 +288,6 @@
             startingLineNumber = "141"
             endingLineNumber = "141"
             landmarkName = "-saveImagesAsTasks:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Kid on Time/KTRoutineInfoController.m"
-            timestampString = "459649143.351484"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
-            landmarkName = "-handleTasksAdded:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -441,13 +425,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Kid on Time/KTAppDelegate.m"
-            timestampString = "460243743.368046"
+            filePath = "Kid on Time/KTTaskPlus.m"
+            timestampString = "460243969.9734"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "-applicationWillTerminate:"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "+markAllDownloadingTasksAsFailed"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Kid on Time/KTTaskCell.m"
+            timestampString = "494031982.846884"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "-prepareForTask:isEditing:isNew:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -457,46 +457,30 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Kid on Time/KTTaskPlus.m"
-            timestampString = "460243969.9734"
+            filePath = "Kid on Time/KTRoutineInfoController.m"
+            timestampString = "494032639.363438"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "+markAllDownloadingTasksAsFailed"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
+            landmarkName = "-collectionView:moveItemAtIndexPath:toIndexPath:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "+[KTTask(plusMethods) markAllDownloadingTasksAsFailed]"
-                  moduleName = "BedtimeBalloons"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/patmcg/Projects/bedtime-balloons/Kid%20on%20Time/KTTaskPlus.m"
-                  timestampString = "460244177.04905"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
-                  offsetFromSymbolStart = "850">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "+[KTTask(plusMethods) markAllDownloadingTasksAsFailed]"
-                  moduleName = "BedtimeBalloons"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/patmcg/Projects/bedtime-balloons/Kid%20on%20Time/KTTaskPlus.m"
-                  timestampString = "460244177.049318"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
-                  offsetFromSymbolStart = "974">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Kid on Time/KTRoutineInfoController.m"
+            timestampString = "494032819.19478"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "-handleTaskChanged:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
