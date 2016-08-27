@@ -76,7 +76,7 @@
                             @"72" : NSLocalizedString(@"app.santa.itunes.url", nil),
                             @"40" : @"http://www.cocos2d-iphone.org",
                             @"41" : @"https://github.com/lukescott/DraggableCollectionView",
-                            @"42" : @"https://github.com/B-Sides/ELCImagePickerController",
+                            @"42" : @"https://github.com/guillermomuntaner/GMImagePicker",
                             @"44" : @"https://github.com/buildmobile/iosrangeslider",
                             @"45" : @"https://www.plcrashreporter.org",
                             @"46" : @"http://www.flaticon.com/free-icon/plus-sign-ios-7-interface-symbol_22245",
