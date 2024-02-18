@@ -2,7 +2,9 @@ My second iOS app, another nights-and-weekends project: a gamified kids' bedtime
 
 Featured interactive sprite-based animations on top of a UIKit view, custom art, timer logic to handle background mode with local notifications, and CoreData-based user customization.
 
-Demo video:
+👉 [Background story](https://patmcg.com/2022/04/11/what-you-can-see-here-is-that-i-was-learning/)
+
+#### Demo video
 
 [![Bedtime Balloons demo video](http://img.youtube.com/vi/2FC9hHkJs5M/0.jpg)](http://www.youtube.com/watch?v=2FC9hHkJs5M)
 
