@@ -1,5 +1,12 @@
 My second iOS app, a gameified kids' bedtime app released years ago as [Bedtime Balloons](https://www.roundtripsoftware.com/app/bedtime/).
 
+Featured interactive sprite-based animations on top of a UIKit view, custom art, timer logic to handle background mode with local notifications, and CoreData-based user customization.
+
+Demo video:
+
+[![Bedtime Balloons demo video](http://img.youtube.com/vi/2FC9hHkJs5M/0.jpg)](http://www.youtube.com/watch?v=2FC9hHkJs5M)
+
+
 ### This is old code
 
 This was pre-[Swift](https://developer.apple.com/swift/) and coded entirely in [Objective-C](https://en.wikipedia.org/wiki/Objective-C) 😲.  Heck, even [ARC](https://opensource.apple.com/source/clang/clang-211.10.1/src/tools/clang/docs/AutomaticReferenceCounting.html) was new at the time.
@@ -14,10 +21,4 @@ Lots of carefully-timed [audio logic](https://github.com/patmcgtx/bedtime-balloo
 
 Some interesting [timer logic](https://github.com/patmcgtx/bedtime-balloons/blob/master/Kid%20on%20Time/KTTimer.m) that tigger [local notifications](https://github.com/patmcgtx/bedtime-balloons/blob/master/Kid%20on%20Time/KTTaskNotifiication.m) when in the background.
 
-## Demo
 
-Demo video:
-
-[![Bedtime Balloons demo video](http://img.youtube.com/vi/2FC9hHkJs5M/0.jpg)](http://www.youtube.com/watch?v=2FC9hHkJs5M)
-
-(No longer on the app store.)
