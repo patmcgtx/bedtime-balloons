@@ -13,12 +13,11 @@ This was pre-[Swift](https://developer.apple.com/swift/) and coded entirely in [
 
 This was pre-[SpriteKit](https://developer.apple.com/spritekit/) 😮, so the animations were in [cocos2d](https://en.wikipedia.org/wiki/Cocos2d), now [Cocos2d-x](https://www.cocos.com/en/cocos2d-x).
 
-Persistence in old-school [CoreData](https://developer.apple.com/documentation/coredata/). 💿  
-
 ### With some interesting features
 
 Lots of carefully-timed [audio logic](https://github.com/patmcgtx/bedtime-balloons/blob/master/Kid%20on%20Time/KTSoundPlayer.m) 🔈 via [AVFoundation](https://developer.apple.com/av-foundation/). 
 
 Some interesting [timer logic](https://github.com/patmcgtx/bedtime-balloons/blob/master/Kid%20on%20Time/KTTimer.m) that tigger [local notifications](https://github.com/patmcgtx/bedtime-balloons/blob/master/Kid%20on%20Time/KTTaskNotifiication.m) when in the background.
 
+Persistence in old-school [CoreData](https://developer.apple.com/documentation/coredata/) 💿, including saving user-selected images.
 
