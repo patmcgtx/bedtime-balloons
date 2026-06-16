@@ -4,11 +4,6 @@ Featured interactive sprite-based animations on top of a UIKit view, custom art,
 
 👉 [Background story](https://patmcg.com/2022/04/11/what-you-can-see-here-is-that-i-was-learning/)
 
-#### Demo video
-
-[![Bedtime Balloons demo video](http://img.youtube.com/vi/2FC9hHkJs5M/0.jpg)](http://www.youtube.com/watch?v=2FC9hHkJs5M)
-
-
 ### This is some old code
 
 This was pre-[Swift](https://developer.apple.com/swift/) and coded entirely in [Objective-C](https://en.wikipedia.org/wiki/Objective-C) 😲.  Heck, even [ARC](https://opensource.apple.com/source/clang/clang-211.10.1/src/tools/clang/docs/AutomaticReferenceCounting.html) was new at the time.
