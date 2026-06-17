@@ -4,6 +4,10 @@ Featured interactive sprite-based animations on top of a UIKit view, custom art,
 
 👉 [Background story](https://patmcg.com/2022/04/11/what-you-can-see-here-is-that-i-was-learning/)
 
+### Demo
+
+[Marketing demo of the app](https://youtu.be/P_HLeBcKXtE?si=k36kmfskB4IFzfiu)
+
 ### This is some old code
 
 This was pre-[Swift](https://developer.apple.com/swift/) and coded entirely in [Objective-C](https://en.wikipedia.org/wiki/Objective-C) 😲.  Heck, even [ARC](https://opensource.apple.com/source/clang/clang-211.10.1/src/tools/clang/docs/AutomaticReferenceCounting.html) was new at the time.
