@@ -4,9 +4,13 @@ Featured interactive sprite-based animations on top of a UIKit view, custom art,
 
 👉 [Background story](https://patmcg.com/2022/04/11/what-you-can-see-here-is-that-i-was-learning/)
 
-### Demo
+### Demo and screenshots
 
 [Marketing demo of the app](https://youtu.be/P_HLeBcKXtE?si=k36kmfskB4IFzfiu)
+
+<img width="320" height="180" alt="bb-screenshot-sleeping" src="https://github.com/user-attachments/assets/16d83a08-4a95-44e4-9ab4-e50fee46ef5b" />
+<img width="180" height="320" alt="bbroutines" src="https://github.com/user-attachments/assets/100a9b6b-9ab7-4de9-a8cd-9f1fddf19525" />
+<img width="180" height="320" alt="bbeditingtask" src="https://github.com/user-attachments/assets/c25423ed-ad72-448c-a0d1-63893c03efb9" />
 
 ### This is some old code
 
