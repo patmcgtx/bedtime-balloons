@@ -4,8 +4,7 @@ Built before SpriteKit existed, this project uses **cocos2d** for sprite animati
 
 ## About
 
-- Repository: [patmcgtx/bedtime-balloons](https://github.com/patmcgtx/bedtime-balloons)
-- Original app page: [Round Trip Software – Bedtime Balloons](https://roundtripsoftware.wordpress.com/bedtime-balloons/)
+- More info: [Round Trip Software – Bedtime Balloons](https://roundtripsoftware.wordpress.com/bedtime-balloons/)
 - Demo video: [Bedtime Balloons demo](https://youtu.be/P_HLeBcKXtE?si=k36kmfskB4IFzfiu)
 
 ## Technical details
