@@ -2,9 +2,10 @@ My second iOS app: a gamified kids' bedtime app released years ago as [Bedtime B
 
 Featured interactive sprite-based animations on top of a UIKit view, custom art, timer logic to handle background mode with local notifications, and CoreData-based user customization.
 
-### Demo and screenshots
+* More info on [Round Trip Software](https://roundtripsoftware.wordpress.com/bedtime-balloons/)
+* [Demo of the app in action](https://youtu.be/P_HLeBcKXtE?si=k36kmfskB4IFzfiu)
 
-[Marketing demo of the app](https://youtu.be/P_HLeBcKXtE?si=k36kmfskB4IFzfiu)
+### Screenshots
 
 <img width="320" height="180" alt="bb-screenshot-sleeping" src="https://github.com/user-attachments/assets/16d83a08-4a95-44e4-9ab4-e50fee46ef5b" />
 <img width="180" height="320" alt="bbroutines" src="https://github.com/user-attachments/assets/100a9b6b-9ab7-4de9-a8cd-9f1fddf19525" />
