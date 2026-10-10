@@ -27,7 +27,7 @@ On the technical side, I wanted to get into interactive animation and original c
 - Run a routine as a game: animated balloon and villain characters (the villain is a pesky bug), with pop sound effects
 - Keep going in the background with local notifications
 - Protect settings from small hands with a parental gate
-- Available in English and German
+- Available in English, with an unfinished German localization
 
 **How it plays:** Each step of the routine (brushing teeth, getting dressed, and so on) shows a friendly animated monkey doing that activity, with an optional animated timer. Balloons float across the top of the screen, and a pesky bug flies around and pops them one at a time as the time runs out. If the child finishes the step in time, they keep the balloons that are left and pop them with a finger as a reward.
 
