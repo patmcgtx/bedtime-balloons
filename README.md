@@ -39,7 +39,7 @@ On the technical side, I wanted to get into interactive animation and original c
 - **Audio** through AVFoundation and CocosDenshion.
 - **Timers and local notifications**, so a routine keeps working when the app isn't on screen.
 - **Native UIKit for everything else:** collection views, wizard screens, image picking and editing, iPhone and iPad layouts.
-- **Early-era constraints:** targets iOS 6.1 and 7.0, from before SpriteKit and Swift existed. The file headers date from late 2011 through 2014.
+- **Early-era constraints:** targets iOS 6.1 and 7.0 and uses cocos2d rather than SpriteKit; the file headers date from late 2011 through 2014.
 
 ### Third-party code in this repo
 
